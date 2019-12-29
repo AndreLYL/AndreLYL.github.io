@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/googlef14d1f778993999f.html</loc>
-    
-    <lastmod>2019-12-29T15:52:21.345Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2019/12/28/blog_deutschfuehrschein/</loc>
     
     <lastmod>2019-12-29T15:29:31.500Z</lastmod>
@@ -71,4 +64,72 @@
     
   </url>
   
+</urlset>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://dhfs.github.io/schemas/sitemap/0.9">
+  
+      
+        https://andrelyl.github.io/2019/12/28/blog_deutschfuehrschein/
+        
+        2019-12-29T15:29:31.500Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2019/12/28/blog_theme_Hueman/
+        
+        2019-12-29T14:00:41.475Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2019/12/28/blog_qingdao/
+        
+        2019-12-29T13:59:58.824Z
+        
+      
+      
+      
+        https://andrelyl.github.io/categories/index.html
+        
+        2019-12-29T13:59:25.156Z
+        
+      
+      
+      
+        https://andrelyl.github.io/tags/index.html
+        
+        2019-12-29T13:34:44.094Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2019/12/28/hello-world/
+        
+        2019-12-28T20:51:45.229Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2019/12/28/blog_xuezhognshida/
+        
+        2019-02-20T00:17:12.930Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2019/12/28/blog_rasberrypi/
+        
+        2019-02-19T21:30:15.911Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2019/12/28/blog_001_helloworld/
+        
+        2019-02-19T19:21:55.495Z
+        
+      
+      
 </urlset>

@@ -6,22 +6,22 @@
     
 
     
-    <title>Hueman主题配置 | Hexo</title>
+    <title>Hueman主题的折腾之路 | Hexo</title>
     
     <meta name="google-site-verification" content="_H3HWQECXL0s4W6UUnXesjCG6GwWs8lnt2mDes7_41Y" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="keywords" content="Hueman" />
     
-    <meta name="description" content="###站点配置文件_config.yml的修改修改theme名称 theme: 后面改为hueman 修改语言 language: 后面改为zh-CN 修改title 这个会在你主页上，显示在浏览器框中的网页名称 修改subtitle副标题 博客logo边上的文字说明 修改author author: 后面添加你自己的名字（这个会在网站底部显示）">
+    <meta name="description" content="Hueman主题的安装虽然网上各种博客的教程大多使用的都是Next主题，但是个人审美上还是对Next的风格接受不能，Hueman才是我心目中的博客风格应有的样子。下面就介绍一下Hueman主题的使用步骤：  手动下载Hueman主题，或者将主题Clone到本地 ..&#x2F;themes 目录下 git clone https:&#x2F;&#x2F;github.com&#x2F;ppoffice&#x2F;hexo-theme-hueman">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hueman主题配置">
+<meta property="og:title" content="Hueman主题的折腾之路">
 <meta property="og:url" content="http://yoursite.com/2019/12/28/hueman%E4%B8%BB%E9%A2%98%E6%8A%98%E8%85%BE%E4%B9%8B%E8%B7%AF/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="###站点配置文件_config.yml的修改修改theme名称 theme: 后面改为hueman 修改语言 language: 后面改为zh-CN 修改title 这个会在你主页上，显示在浏览器框中的网页名称 修改subtitle副标题 博客logo边上的文字说明 修改author author: 后面添加你自己的名字（这个会在网站底部显示）">
+<meta property="og:description" content="Hueman主题的安装虽然网上各种博客的教程大多使用的都是Next主题，但是个人审美上还是对Next的风格接受不能，Hueman才是我心目中的博客风格应有的样子。下面就介绍一下Hueman主题的使用步骤：  手动下载Hueman主题，或者将主题Clone到本地 ..&#x2F;themes 目录下 git clone https:&#x2F;&#x2F;github.com&#x2F;ppoffice&#x2F;hexo-theme-hueman">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-12-28T21:28:34.782Z">
-<meta property="article:modified_time" content="2019-12-29T14:00:41.475Z">
+<meta property="article:published_time" content="2019-12-27T23:00:00.000Z">
+<meta property="article:modified_time" content="2019-12-29T19:53:20.861Z">
 <meta property="article:author" content="Andre">
 <meta property="article:tag" content="Hueman">
 <meta name="twitter:card" content="summary">
@@ -165,7 +165,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        Hueman主题配置
+        Hueman主题的折腾之路
         </h1>
     
 
@@ -177,7 +177,7 @@
     <div class="article-date">
       <i class="fa fa-calendar"></i>
       <a href="/2019/12/28/hueman%E4%B8%BB%E9%A2%98%E6%8A%98%E8%85%BE%E4%B9%8B%E8%B7%AF/" class="article-date">
-         <time datetime="2019-12-28T21:28:34.782Z" itemprop="datePublished">2019-12-28</time>
+         <time datetime="2019-12-27T23:00:00.000Z" itemprop="datePublished">2019-12-28</time>
       </a>
     </div>
 
@@ -196,7 +196,7 @@
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">96</span>
+      <span class="post-count">286</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
       <span class="post-count">1 分钟 </span>
@@ -207,16 +207,18 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>###站点配置文件_config.yml的修改<br>修改theme名称</p>
+            <h2 id="Hueman主题的安装"><a href="#Hueman主题的安装" class="headerlink" title="Hueman主题的安装"></a>Hueman主题的安装</h2><p>虽然网上各种博客的教程大多使用的都是Next主题，但是个人审美上还是对Next的风格接受不能，Hueman才是我心目中的博客风格应有的样子。下面就介绍一下Hueman主题的使用步骤：</p>
+<ol>
+<li>手动下载<a href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener" title="下载地址">Hueman主题</a>，或者将主题Clone到本地 ../themes 目录下 <code>git clone https://github.com/ppoffice/hexo-theme-hueman.git</code></li>
+<li>在Hexo文件目录下打开<strong>_config.xml</strong>文件，找到关键词 <strong>theme</strong> 将主题名称修改为：<strong>hexo-theme-hueman</strong></li>
+<li>在<strong>\Hexo\themes\hexo-theme-hueman</strong>目录下找到<strong>_config.xml.example</strong>文件，将后缀<strong>.example</strong>去掉</li>
+<li>在Hexo文件目录下打开git bash，依次执行 <code>git clean</code> 和 <code>git g -d</code>，将Hueman主题成功提交到Gitpage. 打开博客网址即可看到主题效果。<h2 id="Hueman主题基本配置"><a href="#Hueman主题基本配置" class="headerlink" title="Hueman主题基本配置"></a>Hueman主题基本配置</h2></li>
+</ol>
 <p>theme: 后面改为hueman</p>
-<p>修改语言</p>
-<p>language: 后面改为zh-CN</p>
-<p>修改title</p>
-<p>这个会在你主页上，显示在浏览器框中的网页名称</p>
-<p>修改subtitle副标题</p>
-<p>博客logo边上的文字说明</p>
-<p>修改author</p>
-<p>author: 后面添加你自己的名字（这个会在网站底部显示）</p>
+<h3 id="修改语言"><a href="#修改语言" class="headerlink" title="修改语言"></a>修改语言</h3><p>language: 后面改为zh-CN</p>
+<h3 id="修改title"><a href="#修改title" class="headerlink" title="修改title"></a>修改title</h3><p>这个会在你主页上，显示在浏览器框中的网页名称</p>
+<h3 id="修改subtitle副标题"><a href="#修改subtitle副标题" class="headerlink" title="修改subtitle副标题"></a>修改subtitle副标题</h3><p>博客logo边上的文字说明</p>
+<h3 id="修改author"><a href="#修改author" class="headerlink" title="修改author"></a>修改author</h3><p>author: 后面添加你自己的名字（这个将在网页的底部显示）</p>
 
         </div>
         <footer class="article-footer">
@@ -224,7 +226,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2019/12/28/hueman%E4%B8%BB%E9%A2%98%E6%8A%98%E8%85%BE%E4%B9%8B%E8%B7%AF/" data-id="ck4re5xj10002u0ty1zrg944c" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2019/12/28/hueman%E4%B8%BB%E9%A2%98%E6%8A%98%E8%85%BE%E4%B9%8B%E8%B7%AF/" data-id="ck4rfmdz30004zstyai6w8r9m" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -294,7 +296,7 @@
             "@type": "Person",
             "name": "Andre"
         },
-        "headline": "Hueman主题配置",
+        "headline": "Hueman主题的折腾之路",
         "image": "http://yoursite.com",
         "keywords": "Hueman",
         "genre": "学习",
@@ -302,18 +304,10 @@
         "dateCreated": "2019-12-28",
         "dateModified": "2019-12-29",
         "url": "http://yoursite.com/2019/12/28/hueman主题折腾之路/",
-        "description": "###站点配置文件_config.yml的修改修改theme名称
-theme: 后面改为hueman
-修改语言
-language: 后面改为zh-CN
-修改title
-这个会在你主页上，显示在浏览器框中的网页名称
-修改subtitle副标题
-博客logo边上的文字说明
-修改author
-author: 后面添加你自己的名字（这个会在网站底部显示）
-",
-        "wordCount": 4
+        "description": "Hueman主题的安装虽然网上各种博客的教程大多使用的都是Next主题，但是个人审美上还是对Next的风格接受不能，Hueman才是我心目中的博客风格应有的样子。下面就介绍一下Hueman主题的使用步骤：
+
+手动下载Hueman主题，或者将主题Clone到本地 ../themes 目录下 git clone https://github.com/ppoffice/hexo-theme-hueman",
+        "wordCount": 47
     }
 </script>
 
@@ -394,20 +388,20 @@ author: 后面添加你自己的名字（这个会在网站底部显示）
         
 <nav id="article-nav">
     
-        <a href="/2019/12/28/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BB%B6%E6%97%B6%E6%91%84%E5%BD%B1/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2019/12/28/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7%EF%BC%9A%E5%8D%95%E8%AF%8D%E7%AF%87/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            树莓派延时摄影
+            德国驾照备考：单词篇
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2019/12/28/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7%EF%BC%9A%E5%8D%95%E8%AF%8D%E7%AF%87/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/03/01/%E8%B6%85%E5%A3%B0%E6%B3%A2%E9%9B%B7%E8%BE%BE/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">德国驾照备考：单词篇</p>
+        <p class="article-nav-title">Arduino超声波雷达</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -429,10 +423,10 @@ author: 后面添加你自己的名字（这个会在网站底部显示）
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/12/28/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BB%B6%E6%97%B6%E6%91%84%E5%BD%B1/" class="thumbnail">
+                            <a href="/2019/12/28/%E9%9D%92%E5%B2%9B%E8%88%AA%E6%8B%8D%E7%85%A7/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://ww1.sinaimg.cn/large/005y0DUGgy1g0cjgjs0baj31jk15o1ky.jpg)" alt="大学时光纪念-青岛" class="thumbnail-image"></span>
     
     
 </a>
@@ -441,15 +435,15 @@ author: 后面添加你自己的名字（这个会在网站底部显示）
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p>
-                            <p class="item-title"><a href="/2019/12/28/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BB%B6%E6%97%B6%E6%91%84%E5%BD%B1/" class="title">树莓派延时摄影</a></p>
-                            <p class="item-date"><time datetime="2019-12-28T21:28:34.786Z" itemprop="datePublished">2019-12-28</time></p>
+                            <p class="item-title"><a href="/2019/12/28/%E9%9D%92%E5%B2%9B%E8%88%AA%E6%8B%8D%E7%85%A7/" class="title">大学时光纪念-青岛</a></p>
+                            <p class="item-date"><time datetime="2019-12-28T21:28:34.731Z" itemprop="datePublished">2019-12-28</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/12/28/hueman%E4%B8%BB%E9%A2%98%E6%8A%98%E8%85%BE%E4%B9%8B%E8%B7%AF/" class="thumbnail">
+                            <a href="/2019/12/28/hello-world/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -460,9 +454,9 @@ author: 后面添加你自己的名字（这个会在网站底部显示）
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p>
-                            <p class="item-title"><a href="/2019/12/28/hueman%E4%B8%BB%E9%A2%98%E6%8A%98%E8%85%BE%E4%B9%8B%E8%B7%AF/" class="title">Hueman主题配置</a></p>
-                            <p class="item-date"><time datetime="2019-12-28T21:28:34.782Z" itemprop="datePublished">2019-12-28</time></p>
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/12/28/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2019-12-28T20:51:45.228Z" itemprop="datePublished">2019-12-28</time></p>
                         </div>
                     </li>
                 
@@ -482,14 +476,14 @@ author: 后面添加你自己的名字（这个会在网站底部显示）
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p>
                             <p class="item-title"><a href="/2019/12/28/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7%EF%BC%9A%E5%8D%95%E8%AF%8D%E7%AF%87/" class="title">德国驾照备考：单词篇</a></p>
-                            <p class="item-date"><time datetime="2019-12-28T21:28:34.780Z" itemprop="datePublished">2019-12-28</time></p>
+                            <p class="item-date"><time datetime="2019-12-27T23:00:00.000Z" itemprop="datePublished">2019-12-28</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/12/28/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="thumbnail">
+                            <a href="/2019/12/28/hueman%E4%B8%BB%E9%A2%98%E6%8A%98%E8%85%BE%E4%B9%8B%E8%B7%AF/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -501,15 +495,15 @@ author: 后面添加你自己的名字（这个会在网站底部显示）
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p>
-                            <p class="item-title"><a href="/2019/12/28/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="title">第一篇博客</a></p>
-                            <p class="item-date"><time datetime="2019-12-28T21:28:34.778Z" itemprop="datePublished">2019-12-28</time></p>
+                            <p class="item-title"><a href="/2019/12/28/hueman%E4%B8%BB%E9%A2%98%E6%8A%98%E8%85%BE%E4%B9%8B%E8%B7%AF/" class="title">Hueman主题的折腾之路</a></p>
+                            <p class="item-date"><time datetime="2019-12-27T23:00:00.000Z" itemprop="datePublished">2019-12-28</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/12/28/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/" class="thumbnail">
+                            <a href="/2019/03/01/%E8%B6%85%E5%A3%B0%E6%B3%A2%E9%9B%B7%E8%BE%BE/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -521,8 +515,8 @@ author: 后面添加你自己的名字（这个会在网站底部显示）
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p>
-                            <p class="item-title"><a href="/2019/12/28/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/" class="title">大学时光纪念-雪中石大</a></p>
-                            <p class="item-date"><time datetime="2019-12-28T21:28:34.775Z" itemprop="datePublished">2019-12-28</time></p>
+                            <p class="item-title"><a href="/2019/03/01/%E8%B6%85%E5%A3%B0%E6%B3%A2%E9%9B%B7%E8%BE%BE/" class="title">Arduino超声波雷达</a></p>
+                            <p class="item-date"><time datetime="2019-02-28T23:00:00.000Z" itemprop="datePublished">2019-03-01</time></p>
                         </div>
                     </li>
                 
@@ -545,7 +539,7 @@ author: 后面添加你自己的名字（这个会在网站底部显示）
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">3</span></li></ul>
         </div>
     </div>
 

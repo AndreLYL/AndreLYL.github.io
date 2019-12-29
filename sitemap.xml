@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/02/18/hello-world/</loc>
+    
+    <lastmod>2019-12-29T19:57:00.180Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/02/20/%E9%9D%92%E5%B2%9B%E8%88%AA%E6%8B%8D%E7%85%A7/</loc>
+    
+    <lastmod>2019-12-29T19:56:33.071Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/12/28/hueman%E4%B8%BB%E9%A2%98%E6%8A%98%E8%85%BE%E4%B9%8B%E8%B7%AF/</loc>
     
     <lastmod>2019-12-29T19:53:20.861Z</lastmod>
@@ -44,13 +58,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/12/28/%E9%9D%92%E5%B2%9B%E8%88%AA%E6%8B%8D%E7%85%A7/</loc>
-    
-    <lastmod>2019-12-29T13:59:58.824Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2019-12-29T13:59:25.156Z</lastmod>
@@ -64,18 +71,25 @@
     
   </url>
   
-  <url>
-    <loc>http://yoursite.com/2019/12/28/hello-world/</loc>
-    
-    <lastmod>2019-12-28T20:51:45.229Z</lastmod>
-    
-  </url>
-  
 </urlset>
 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://andrelyl.github.io/schemas/sitemap/1.0">
   
+      
+        https://andrelyl.github.io/2019/02/18/hello-world/
+        
+        2019-12-29T19:57:00.180Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2019/02/20/%E9%9D%92%E5%B2%9B%E8%88%AA%E6%8B%8D%E7%85%A7/
+        
+        2019-12-29T19:56:33.071Z
+        
+      
+      
       
         https://andrelyl.github.io/2019/12/28/hueman%E4%B8%BB%E9%A2%98%E6%8A%98%E8%85%BE%E4%B9%8B%E8%B7%AF/
         
@@ -119,13 +133,6 @@
       
       
       
-        https://andrelyl.github.io/2019/12/28/%E9%9D%92%E5%B2%9B%E8%88%AA%E6%8B%8D%E7%85%A7/
-        
-        2019-12-29T13:59:58.824Z
-        
-      
-      
-      
         https://andrelyl.github.io/categories/index.html
         
         2019-12-29T13:59:25.156Z
@@ -136,13 +143,6 @@
         https://andrelyl.github.io/tags/index.html
         
         2019-12-29T13:34:44.094Z
-        
-      
-      
-      
-        https://andrelyl.github.io/2019/12/28/hello-world/
-        
-        2019-12-28T20:51:45.229Z
         
       
       

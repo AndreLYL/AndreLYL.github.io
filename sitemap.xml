@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2020-01-15T22:59:26.801Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/12/28/hueman%E4%B8%BB%E9%A2%98%E6%8A%98%E8%85%BE%E4%B9%8B%E8%B7%AF/</loc>
     
     <lastmod>2020-01-15T22:37:20.806Z</lastmod>
@@ -97,6 +104,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://andrelyl.github.io/schemas/sitemap/1.0">
   
+      
+        https://andrelyl.github.io/about/index.html
+        
+        2020-01-15T22:59:26.801Z
+        
+      
+      
       
         https://andrelyl.github.io/2019/12/28/hueman%E4%B8%BB%E9%A2%98%E6%8A%98%E8%85%BE%E4%B9%8B%E8%B7%AF/
         

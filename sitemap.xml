@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/01/02/Markdown%E8%AF%AD%E6%B3%95/</loc>
+    
+    <lastmod>2020-01-15T23:36:46.974Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2020-01-15T22:59:26.801Z</lastmod>
@@ -104,6 +111,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://andrelyl.github.io/schemas/sitemap/1.0">
   
+      
+        https://andrelyl.github.io/2020/01/02/Markdown%E8%AF%AD%E6%B3%95/
+        
+        2020-01-15T23:36:46.974Z
+        
+      
+      
       
         https://andrelyl.github.io/about/index.html
         

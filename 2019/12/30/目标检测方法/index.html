@@ -22,7 +22,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006E0Yd9gy1gafac10s13j30of0a810g.jpg">
 <meta property="article:published_time" content="2019-12-29T23:00:00.000Z">
-<meta property="article:modified_time" content="2020-01-15T17:21:00.920Z">
+<meta property="article:modified_time" content="2020-01-20T21:28:24.684Z">
 <meta property="article:author" content="Andre">
 <meta property="article:tag" content="CV">
 <meta name="twitter:card" content="summary">
@@ -106,7 +106,7 @@ ga('send', 'pageview');
                                     <a class="main-nav-list-link" href="/">主页</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E9%97%B2%E6%83%85%E5%B0%8F%E8%AE%B0/">闲情小记</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">关于</a>
@@ -210,10 +210,10 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">1.3k</span>
+      <span class="post-count">2k</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">4 分钟 </span>
+      <span class="post-count">6 分钟 </span>
    </div>
 
 
@@ -230,6 +230,11 @@ ga('send', 'pageview');
 <p>首先论文采用了哈尔矩形特征作为Feature descripter. 该特征通过计算矩形明暗区域的像素和差值来描述区域的特征。作者创新性的提出了积分图的方法来简化运算，该图像和原图像大小相同，其每个位置的值为像素点左上所有像素点之和。 采用该图可以使任意矩形区域的特征值通过积分图上矩形四个顶点的值进行运算，这大大降低了计算负担。<br>其次，</p>
 <h3 id="HoG-SVM"><a href="#HoG-SVM" class="headerlink" title="HoG + SVM"></a>HoG + SVM</h3><p>HOG descripter是传统目标检测领域的重要的里程碑，它在SIFT，和形状上下文的基础上，在均匀建个的单元格密集网络上使用</p>
 <p><strong>特征提取链：</strong> 输入图像首先被分成许多小的空间区域（6<em>16像素块，四个 8</em>8 的像素单元），通过收集像素中每个像素的梯度和边缘方向 可以计算一维面向梯度的直方图。 但是由于局部照明的差异以及前景和背景的对比度，梯度强度变化的范围非常大，因此需要对梯度的局部对比度进行归一化。 需要进行对比度归一化的步骤，以使描述符对光照，阴影和边缘变化具有鲁棒性。 然后，将规范化描述符（HOG描述符）填充到密集网格中的检测窗口中，并将由HOG描述符形成的特征向量放入线性SVM分类器中以实现二进制分类。 最后，检测窗口扫描输入图像的多尺度图像金字塔，通过非最大抑制来检测物体。在分类器的训练过程中，dalal等人采用一个两步的训练方法，使得误检率减少了5% 。</p>
+<h3 id="DPM-LSVM"><a href="#DPM-LSVM" class="headerlink" title="DPM + LSVM"></a>DPM + LSVM</h3><p>值得一提的是，Dalal的论文所提出的HOG+SVM方法采用固定的模板来提取HOG特征，这种方法对于无法处理目标的形变问题。 2008年，P. Felzenswalb在HOG特征的基础上提出了DPM+LSVM的方法，这种方法在由HOG特征生成的金字塔上，采用一个粗略的模板来涵盖物体，和一个精细的模板来检测物体的可形变部分。 通过这种方法，作者在2007 PASCAL挑战赛的20个类别中的十个类别获得最佳结果。并且检测精度是2006 PASCAL冠军的两倍。作者也因此在2010年获得 PASCAL VOC的终身成就奖</p>
+<p>*<em>系统概述: *</em>基于滑动窗口法，该目标检测系统由一个root filter和多个part models组成.</p>
+<h2 id="基于深度学习的目标检测方法"><a href="#基于深度学习的目标检测方法" class="headerlink" title="基于深度学习的目标检测方法"></a>基于深度学习的目标检测方法</h2><p>1998年，Yann LeCun提出了LeNet-5的网络结构，该结构可以端到端训练模型以进行文档检测。 它成为最经典的CNN结构，以后的大部分CNN模型都源自此版本。 2012年，Kriszhevsky等人在物体检测领域采用了基于CNN的方法。 在2014年，Ross Girshick等人。 提出的R-CNN，其出色的性能吸引了研究人员的注意。 从那时起，深度学习成为对象检测领域的一个热点。</p>
+<p>与具有手工功能的传统方法相比，基于CNN的方法可以更分层和更深入地表示特征。 典型的CNN结构由具有特征图的许多层组成。 特征图中的像素（神经元）通过权重连接到先前的特征图。 可以通过具有共享权重的卷积核从上一层的局部区域中获取每一层的特征。 输入图像将在网络中重复计算，低级特征将在初始层中计算，而高级特征则可在后续层中提取。 结果上，模型的表达能力将通过CNN结构得到了指数级的提高。 特征可以以较高的语义层面来表达。</p>
+<p>随着研究的不断深入，基于深度学习的方法发展出了两种不同的方向。 第一种是以RCNN, Fast RCNN，Faster RCNN为代表的两阶段模型(two stage frameworks)，又称作基于区域模型(region based frameworks)。该方法遵循传统的目标检测流程，首先生成候选区域(region proposal)，然后根据所提取的特征将这些候选区域分为不同的类别。 第二种是基于分类/回归的一步框架，它可以直接从图像的像素映射到边界框坐标和类别的概率。通过这种方法可以大大降低时间开销。其代表模型有： Yolo, SSD。</p>
 
         </div>
         <footer class="article-footer">
@@ -306,10 +311,10 @@ ga('send', 'pageview');
         "genre": "学习",
         "datePublished": "2019-12-30",
         "dateCreated": "2019-12-30",
-        "dateModified": "2020-01-15",
+        "dateModified": "2020-01-20",
         "url": "http://yoursite.com/2019/12/30/目标检测方法/",
         "description": "摘要目标检测是近些年来计算机视觉和数字图像处理的一个研究热点，它是图像处理和计算机视觉学科的重要分支，广泛应用于自动驾驶，机器人导航、智能视频监控、工业检测、航空航天等诸多领域。它的主要任务是检测已知的类别在图像中的实例，它包含物体定位和物体分类两个子任务，同时确定物体的类别和位置。传统的的目标检测算法通过区域选择，特征提取，分类三个步骤实现对物体的检测。随着深度学习技术的发展，目标检测算法采用不",
-        "wordCount": 62
+        "wordCount": 109
     }
 </script>
 
@@ -401,9 +406,9 @@ ga('send', 'pageview');
     </a>
     
     
-        <a href="/2019/12/28/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7%EF%BC%9A%E5%8D%95%E8%AF%8D%E7%AF%87/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/12/28/hueman%E4%B8%BB%E9%A2%98%E6%8A%98%E8%85%BE%E4%B9%8B%E8%B7%AF/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">德国驾照备考：单词篇</p>
+        <p class="article-nav-title">Hueman主题的折腾之路</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -421,6 +426,26 @@ ga('send', 'pageview');
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/22/%E5%A6%84%E8%A8%80%E7%AF%87/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E9%97%B2%E6%83%85%E5%B0%8F%E8%AE%B0/">闲情小记</a></p>
+                            <p class="item-title"><a href="/2020/01/22/%E5%A6%84%E8%A8%80%E7%AF%87/" class="title">妄言篇 | 其一</a></p>
+                            <p class="item-date"><time datetime="2020-01-21T23:00:00.000Z" itemprop="datePublished">2020-01-22</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -502,26 +527,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/12/28/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7%EF%BC%9A%E5%8D%95%E8%AF%8D%E7%AF%87/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gae9l9alndj30c804q742.jpg)" alt="德国驾照备考：单词篇" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p>
-                            <p class="item-title"><a href="/2019/12/28/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7%EF%BC%9A%E5%8D%95%E8%AF%8D%E7%AF%87/" class="title">德国驾照备考：单词篇</a></p>
-                            <p class="item-date"><time datetime="2019-12-27T23:00:00.000Z" itemprop="datePublished">2019-12-28</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -531,7 +536,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><span class="category-list-count">4</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%97%B2%E6%83%85%E5%B0%8F%E8%AE%B0/">闲情小记</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -541,7 +546,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -551,7 +556,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -561,7 +566,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Blogs/" style="font-size: 20px;">Blogs</a> <a href="/tags/CV/" style="font-size: 15px;">CV</a> <a href="/tags/photo/" style="font-size: 20px;">photo</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 15px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
+            <a href="/tags/Blogs/" style="font-size: 20px;">Blogs</a> <a href="/tags/CV/" style="font-size: 13.33px;">CV</a> <a href="/tags/photo/" style="font-size: 16.67px;">photo</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 13.33px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
         </div>
     </div>
 

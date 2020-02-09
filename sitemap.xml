@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2020/02/03/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AF-%E6%AF%95%E8%AE%BE%E7%AF%87/</loc>
+    <loc>http://yoursite.com/2020/02/07/%E5%A6%84%E8%A8%80/</loc>
     
-    <lastmod>2020-02-04T08:05:36.533Z</lastmod>
+    <lastmod>2020-02-09T21:43:30.955Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/02/09/Self_driving/%E8%87%AA%E9%A9%BE%E8%AE%BA%E6%96%871/</loc>
+    
+    <lastmod>2020-02-09T21:32:15.206Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2020/02/03/%E6%85%8E%E6%80%9D%E7%AF%870/</loc>
     
-    <lastmod>2020-02-04T08:02:40.796Z</lastmod>
+    <lastmod>2020-02-07T00:20:19.455Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/02/03/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AF-%E6%AF%95%E8%AE%BE%E7%AF%87/</loc>
+    
+    <lastmod>2020-02-06T19:19:57.588Z</lastmod>
     
   </url>
   
@@ -126,16 +140,30 @@
 <urlset xmlns="https://andrelyl.github.io/schemas/sitemap/1.0">
   
       
-        https://andrelyl.github.io/2020/02/03/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AF-%E6%AF%95%E8%AE%BE%E7%AF%87/
+        https://andrelyl.github.io/2020/02/07/%E5%A6%84%E8%A8%80/
         
-        2020-02-04T08:05:36.533Z
+        2020-02-09T21:43:30.955Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2020/02/09/Self_driving/%E8%87%AA%E9%A9%BE%E8%AE%BA%E6%96%871/
+        
+        2020-02-09T21:32:15.206Z
         
       
       
       
         https://andrelyl.github.io/2020/02/03/%E6%85%8E%E6%80%9D%E7%AF%870/
         
-        2020-02-04T08:02:40.796Z
+        2020-02-07T00:20:19.455Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2020/02/03/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AF-%E6%AF%95%E8%AE%BE%E7%AF%87/
+        
+        2020-02-06T19:19:57.588Z
         
       
       

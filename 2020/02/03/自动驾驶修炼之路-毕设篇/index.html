@@ -13,15 +13,15 @@
     
     <meta name="keywords" content="self-driving" />
     
-    <meta name="description" content="概念扫盲 Point clouds: 点云，点云是代表3D形状或特征的点的集合。 每个点云数据除了都有自己的X，Y和Z坐标外，还含有强度（Intensity）信息或者含有色彩信息（R,G,B） Voxel: 体素，三维图像的最小单元，类比于像素，二维图像的最小单元。 RNN: 循环神经网络 tensor: 张量，即多维数组  论文阅读论文1：Fast und Furious: Real Time">
+    <meta name="description" content="谷歌自动驾驶车项目2017：https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;O2bXF7XJ5P0&amp;feature&#x3D;youtu.be&amp;t&#x3D;2343行为预测介绍博客：https:&#x2F;&#x2F;www.jiqizhixin.com&#x2F;articles&#x2F;2019-02-13-23 （伯克利博士）https:&#x2F;&#x2F;www.jiqizhixin.com&#x2F;articles&#x2F;2019-05-1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自动驾驶的修炼之路-毕设篇">
 <meta property="og:url" content="http://yoursite.com/2020/02/03/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AF-%E6%AF%95%E8%AE%BE%E7%AF%87/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="概念扫盲 Point clouds: 点云，点云是代表3D形状或特征的点的集合。 每个点云数据除了都有自己的X，Y和Z坐标外，还含有强度（Intensity）信息或者含有色彩信息（R,G,B） Voxel: 体素，三维图像的最小单元，类比于像素，二维图像的最小单元。 RNN: 循环神经网络 tensor: 张量，即多维数组  论文阅读论文1：Fast und Furious: Real Time">
+<meta property="og:description" content="谷歌自动驾驶车项目2017：https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;O2bXF7XJ5P0&amp;feature&#x3D;youtu.be&amp;t&#x3D;2343行为预测介绍博客：https:&#x2F;&#x2F;www.jiqizhixin.com&#x2F;articles&#x2F;2019-02-13-23 （伯克利博士）https:&#x2F;&#x2F;www.jiqizhixin.com&#x2F;articles&#x2F;2019-05-1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-02T23:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-09T22:16:52.505Z">
+<meta property="article:modified_time" content="2020-02-14T15:53:54.516Z">
 <meta property="article:author" content="Andre">
 <meta property="article:tag" content="self-driving">
 <meta name="twitter:card" content="summary">
@@ -208,10 +208,10 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">303</span>
+      <span class="post-count">410</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">1 分钟 </span>
+      <span class="post-count">2 分钟 </span>
    </div>
 
 
@@ -219,7 +219,8 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="概念扫盲"><a href="#概念扫盲" class="headerlink" title="概念扫盲"></a>概念扫盲</h2><ul>
+            <p>谷歌自动驾驶车项目2017：<a href="https://www.youtube.com/watch?v=O2bXF7XJ5P0&amp;feature=youtu.be&amp;t=2343" target="_blank" rel="noopener">https://www.youtube.com/watch?v=O2bXF7XJ5P0&amp;feature=youtu.be&amp;t=2343</a><br>行为预测介绍博客：<br><a href="https://www.jiqizhixin.com/articles/2019-02-13-23" target="_blank" rel="noopener">https://www.jiqizhixin.com/articles/2019-02-13-23</a> （伯克利博士）<br><a href="https://www.jiqizhixin.com/articles/2019-05-14-4" target="_blank" rel="noopener">https://www.jiqizhixin.com/articles/2019-05-14-4</a> （美团）<br><a href="https://cloud.tencent.com/developer/news/377875" target="_blank" rel="noopener">https://cloud.tencent.com/developer/news/377875</a>  （激光雷达目标检测上）<br><a href="https://cloud.tencent.com/developer/news/378562" target="_blank" rel="noopener">https://cloud.tencent.com/developer/news/378562</a> （激光雷达目标检测下）<br><a href="https://cloud.tencent.com/developer/article/1509299" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1509299</a> （激光雷达目标检测论文集）</p>
+<h2 id="概念扫盲"><a href="#概念扫盲" class="headerlink" title="概念扫盲"></a>概念扫盲</h2><ul>
 <li><strong>Point clouds:</strong> 点云，点云是代表3D形状或特征的点的集合。 每个点云数据除了都有自己的X，Y和Z坐标外，还含有强度（Intensity）信息或者含有色彩信息（R,G,B）</li>
 <li><strong>Voxel:</strong> 体素，三维图像的最小单元，类比于像素，二维图像的最小单元。</li>
 <li><strong>RNN:</strong> 循环神经网络</li>
@@ -323,16 +324,10 @@ e. Detail:
         "genre": "术业",
         "datePublished": "2020-02-03",
         "dateCreated": "2020-02-03",
-        "dateModified": "2020-02-09",
+        "dateModified": "2020-02-14",
         "url": "http://yoursite.com/2020/02/03/自动驾驶修炼之路-毕设篇/",
-        "description": "概念扫盲
-Point clouds: 点云，点云是代表3D形状或特征的点的集合。 每个点云数据除了都有自己的X，Y和Z坐标外，还含有强度（Intensity）信息或者含有色彩信息（R,G,B）
-Voxel: 体素，三维图像的最小单元，类比于像素，二维图像的最小单元。
-RNN: 循环神经网络
-tensor: 张量，即多维数组
-
-论文阅读论文1：Fast und Furious: Real Time ",
-        "wordCount": 274
+        "description": "谷歌自动驾驶车项目2017：https://www.youtube.com/watch?v=O2bXF7XJ5P0&amp;feature=youtu.be&amp;t=2343行为预测介绍博客：https://www.jiqizhixin.com/articles/2019-02-13-23 （伯克利博士）https://www.jiqizhixin.com/articles/2019-05-1",
+        "wordCount": 298
     }
 </script>
 
@@ -413,20 +408,20 @@ tensor: 张量，即多维数组
         
 <nav id="article-nav">
     
-        <a href="/2020/02/03/%E6%85%8E%E6%80%9D%E7%AF%87/%E6%85%8E%E6%80%9D%E7%AF%870/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2020/02/07/%E5%A6%84%E8%A8%80%E7%AF%87/%E5%A6%84%E8%A8%80/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            慎思篇-毕设
+            书生当谈国事
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2020/01/15/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2020/02/03/%E6%85%8E%E6%80%9D%E7%AF%87/%E6%85%8E%E6%80%9D%E7%AF%870/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">目标检测论文笔记</p>
+        <p class="article-nav-title">慎思篇-毕设</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -444,6 +439,26 @@ tensor: 张量，即多维数组
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/02/11/%E7%8E%A9%E7%89%A9%E7%AF%87/Minecraft-Bibliothek/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a></p>
+                            <p class="item-title"><a href="/2020/02/11/%E7%8E%A9%E7%89%A9%E7%AF%87/Minecraft-Bibliothek/" class="title">Minecraft-布伦图书馆模型</a></p>
+                            <p class="item-date"><time datetime="2020-02-10T23:00:00.000Z" itemprop="datePublished">2020-02-11</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -488,26 +503,6 @@ tensor: 张量，即多维数组
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2020/02/03/%E6%85%8E%E6%80%9D%E7%AF%87/%E6%85%8E%E6%80%9D%E7%AF%870/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gbjywuvofpj30kj0bmguw.jpg)" alt="慎思篇-毕设" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a></p>
-                            <p class="item-title"><a href="/2020/02/03/%E6%85%8E%E6%80%9D%E7%AF%87/%E6%85%8E%E6%80%9D%E7%AF%870/" class="title">慎思篇-毕设</a></p>
-                            <p class="item-date"><time datetime="2020-02-02T23:00:00.000Z" itemprop="datePublished">2020-02-03</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2020/02/03/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AF-%E6%AF%95%E8%AE%BE%E7%AF%87/" class="thumbnail">
     
     
@@ -528,10 +523,10 @@ tensor: 张量，即多维数组
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2020/01/15/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="thumbnail">
+                            <a href="/2020/02/03/%E6%85%8E%E6%80%9D%E7%AF%87/%E6%85%8E%E6%80%9D%E7%AF%870/" class="thumbnail">
     
     
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gaxx9epc1sj31800uok1m.jpg)" alt="目标检测论文笔记" class="thumbnail-image"></span>
+        <span class="thumbnail-image thumbnail-none"></span>
     
     
 </a>
@@ -539,9 +534,9 @@ tensor: 张量，即多维数组
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
-                            <p class="item-title"><a href="/2020/01/15/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="title">目标检测论文笔记</a></p>
-                            <p class="item-date"><time datetime="2020-01-14T23:00:00.000Z" itemprop="datePublished">2020-01-15</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a></p>
+                            <p class="item-title"><a href="/2020/02/03/%E6%85%8E%E6%80%9D%E7%AF%87/%E6%85%8E%E6%80%9D%E7%AF%870/" class="title">慎思篇-毕设</a></p>
+                            <p class="item-date"><time datetime="2020-02-02T23:00:00.000Z" itemprop="datePublished">2020-02-03</time></p>
                         </div>
                     </li>
                 
@@ -554,7 +549,7 @@ tensor: 张量，即多维数组
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A6%84%E8%A8%80/">妄言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">4</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A6%84%E8%A8%80/">妄言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -564,7 +559,7 @@ tensor: 张量，即多维数组
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -574,7 +569,7 @@ tensor: 张量，即多维数组
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-driving/" rel="tag">self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-driving/" rel="tag">self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E6%A8%A1/" rel="tag">建模</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -584,7 +579,7 @@ tensor: 张量，即多维数组
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Blogs/" style="font-size: 20px;">Blogs</a> <a href="/tags/CV/" style="font-size: 13.33px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/photo/" style="font-size: 16.67px;">photo</a> <a href="/tags/self-driving/" style="font-size: 10px;">self-driving</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 13.33px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
+            <a href="/tags/Blogs/" style="font-size: 20px;">Blogs</a> <a href="/tags/CV/" style="font-size: 13.33px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/photo/" style="font-size: 16.67px;">photo</a> <a href="/tags/self-driving/" style="font-size: 10px;">self-driving</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 10px;">建模</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 13.33px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
         </div>
     </div>
 

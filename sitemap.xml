@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2020/02/09/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/</loc>
+    <loc>http://yoursite.com/2020/02/25/%E6%9C%AF%E4%B8%9A%E7%AF%87/02.Apollo%E5%AD%A6%E4%B9%A0/</loc>
     
-    <lastmod>2020-02-24T22:15:40.802Z</lastmod>
+    <lastmod>2020-02-25T10:20:31.962Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/02/23/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/</loc>
+    
+    <lastmod>2020-02-25T09:49:40.792Z</lastmod>
     
   </url>
   
@@ -154,9 +161,16 @@
 <urlset xmlns="https://andrelyl.github.io/schemas/sitemap/1.0">
   
       
-        https://andrelyl.github.io/2020/02/09/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/
+        https://andrelyl.github.io/2020/02/25/%E6%9C%AF%E4%B8%9A%E7%AF%87/02.Apollo%E5%AD%A6%E4%B9%A0/
         
-        2020-02-24T22:15:40.802Z
+        2020-02-25T10:20:31.962Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2020/02/23/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/
+        
+        2020-02-25T09:49:40.792Z
         
       
       

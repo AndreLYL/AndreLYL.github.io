@@ -16,13 +16,13 @@
     <meta name="description" content="Cha 1： Hello World基本术语 人工智能：一种计算机科学分支，旨在让计算机达到人类的智慧。实现这一目标有很多方式，包括机器学习和深度学习。 机器学习：一系列相关技术，用于训练计算机执行特定的任务。 神经网络：一种机器学习结构，灵感来自人类大脑的神经元网络。神经网络是深度学习的基本概念。 深度学习：机器学习的一个分支，利用多层神经网络实现目标。通常“机器学习”和“深度学习”可以相互指代">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tensorflow入门_Udacity">
-<meta property="og:url" content="http://yoursite.com/2020/02/09/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/02/23/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Cha 1： Hello World基本术语 人工智能：一种计算机科学分支，旨在让计算机达到人类的智慧。实现这一目标有很多方式，包括机器学习和深度学习。 机器学习：一系列相关技术，用于训练计算机执行特定的任务。 神经网络：一种机器学习结构，灵感来自人类大脑的神经元网络。神经网络是深度学习的基本概念。 深度学习：机器学习的一个分支，利用多层神经网络实现目标。通常“机器学习”和“深度学习”可以相互指代">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://video.udacity-data.com/topher/2019/March/5c7f0a2e_tensorflow-l1f1/tensorflow-l1f1.png">
-<meta property="article:published_time" content="2020-02-08T23:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-24T22:15:40.802Z">
+<meta property="article:published_time" content="2020-02-22T23:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-25T09:49:40.792Z">
 <meta property="article:author" content="Andre">
 <meta property="article:tag" content="Tensorflow">
 <meta name="twitter:card" content="summary">
@@ -190,8 +190,8 @@ ga('send', 'pageview');
                 
     <div class="article-date">
       <i class="fa fa-calendar"></i>
-      <a href="/2020/02/09/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/" class="article-date">
-         <time datetime="2020-02-08T23:00:00.000Z" itemprop="datePublished">2020-02-09</time>
+      <a href="/2020/02/23/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/" class="article-date">
+         <time datetime="2020-02-22T23:00:00.000Z" itemprop="datePublished">2020-02-23</time>
       </a>
     </div>
 
@@ -210,10 +210,10 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">2.4k</span>
+      <span class="post-count">3k</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">8 分钟 </span>
+      <span class="post-count">10 分钟 </span>
    </div>
 
 
@@ -286,7 +286,7 @@ ga('send', 'pageview');
 <p><img src="https://video.udacity-data.com/topher/2019/March/5c7f0cff_tensorflow-l3f1/tensorflow-l3f1.png" alt="ReLU函数"></p>
 <p>本章节的神经网络模型如下图所示：<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc741v4wkqj30i909ttd4.jpg" alt="该章节神经网络模型"></p>
 <p><strong>Input image:</strong>上面提到，Fashion MNIST数据集中的图像大小均为28 * 28 = 784像素，并且神经网络的输入必须是向量，因此需要将图像转化为以为数组，该过程即为扁平化，其实现代码为: <code>tf.keras.layers.Flatten(input_shape=(28,28,1))</code><br><strong>密集层：</strong>输入将和密集层完全连接，该密集层共128个单元，在这里需要激活函数，其实现代码为：<br><strong>输出层：</strong>输出层共有10个单元，因为该数据集总共有10个类别，在这里每张图片的预测结果应为图像在每个类别中的概率大小，其和为1。（对于任何一个分类神经网络，最后都会添加一个密集层，其包含的单元数量和类别数量一样，并且始终会添加softmax语句）</p>
-<h2 id="训练和测试"><a href="#训练和测试" class="headerlink" title="训练和测试"></a>训练和测试</h2><p>数据集通常会划分为不同的子集，如<strong>训练集</strong>和<strong>测试集</strong>，用于训练神经网络和测试神经网络的最终效果。通过测试数据集，我们可以使用网络从未见过的数据测试网络。这样我们便能检测模型的泛化程度，即泛化到训练期间未见过的数据的效果，而不是仅仅记住训练样本。同样，我们通常会使用验证数据集。此类数据集不用于训练，而是在训练期间用于测试模型。我们在一定的训练步数之后使用验证集，判断训练进展如何。例如，如果在训练过程中损失降低了，但是验证集的准确率下降了，则表明模型在记住测试集。训练完毕时，也会使用验证集衡量模型的最终准确率。 扩展阅读：<a href="https://developers.google.com/machine-learning/crash-course/training-and-test-sets/video-lecture" target="_blank" rel="noopener">Google 机器学习速成课程的训练和测试集部分</a><br>当有一个很大的数据集合，一部分用于训练一部分用于测试，测试集的选择需要注意随机化处理，一般训练集越大，训练出的模型越精确，测试集越大，对评估指标的信心越充足，置信区间就越窄。 如果数据集规模比较大，则取其10% ~ 15%就可以得到良好的验证效果，如果数据集比较小，则验证阶段就需要交叉验证等复杂操作。典型陷阱：不要将用于测试的集合同时用于训练，这样会得出非常优秀的结果（如测试准确率100%）。</p>
+<h3 id="训练和测试"><a href="#训练和测试" class="headerlink" title="训练和测试"></a>训练和测试</h3><p>数据集通常会划分为不同的子集，如<strong>训练集</strong>和<strong>测试集</strong>，用于训练神经网络和测试神经网络的最终效果。通过测试数据集，我们可以使用网络从未见过的数据测试网络。这样我们便能检测模型的泛化程度，即泛化到训练期间未见过的数据的效果，而不是仅仅记住训练样本。同样，我们通常会使用验证数据集。此类数据集不用于训练，而是在训练期间用于测试模型。我们在一定的训练步数之后使用验证集，判断训练进展如何。例如，如果在训练过程中损失降低了，但是验证集的准确率下降了，则表明模型在记住测试集。训练完毕时，也会使用验证集衡量模型的最终准确率。 扩展阅读：<a href="https://developers.google.com/machine-learning/crash-course/training-and-test-sets/video-lecture" target="_blank" rel="noopener">Google 机器学习速成课程的训练和测试集部分</a><br>当有一个很大的数据集合，一部分用于训练一部分用于测试，测试集的选择需要注意随机化处理，一般训练集越大，训练出的模型越精确，测试集越大，对评估指标的信心越充足，置信区间就越窄。 如果数据集规模比较大，则取其10% ~ 15%就可以得到良好的验证效果，如果数据集比较小，则验证阶段就需要交叉验证等复杂操作。典型陷阱：不要将用于测试的集合同时用于训练，这样会得出非常优秀的结果（如测试准确率100%）。</p>
 <h3 id="Code总结"><a href="#Code总结" class="headerlink" title="Code总结"></a>Code总结</h3><ul>
 <li><strong>epochs:</strong> epochs的参数对模型的精度有直接的影响，周期数过小，模型欠拟合，精度不够。周期数过大，模型过拟合，在训练集精度很高，在测试集上训练精度很低.</li>
 <li><strong>密集层神经元数量：</strong> 神经元过少会明显减小检测的精度，总体上来说，神经元增加会增加会提升精度（根据源码中的练习得出的不完全实验结论）</li>
@@ -295,12 +295,27 @@ ga('send', 'pageview');
 <li></li>
 </ul>
 <p><strong>个人练习：</strong> <a href="https://colab.research.google.com/drive/1ItgEKIIG55Mc11dpgTQFLMJ-cvMmSnNX#scrollTo=z4Ji8sEmR4YH" target="_blank" rel="noopener">https://colab.research.google.com/drive/1ItgEKIIG55Mc11dpgTQFLMJ-cvMmSnNX#scrollTo=z4Ji8sEmR4YH</a><br><strong>课程源码：</strong> <a href="https://colab.research.google.com/drive/1RV1-alG87M8JWnMU0NaytOGHsieRq9-I#scrollTo=9ODch-OFCaW4" target="_blank" rel="noopener">https://colab.research.google.com/drive/1RV1-alG87M8JWnMU0NaytOGHsieRq9-I#scrollTo=9ODch-OFCaW4</a></p>
-<h2 id="本章总结"><a href="#本章总结" class="headerlink" title="本章总结"></a>本章总结</h2><p>机器学习的需要解决的问题主要由两个类别：递归问题和分类问题</p>
+<h3 id="本章总结"><a href="#本章总结" class="headerlink" title="本章总结"></a>本章总结</h3><p>机器学习的需要解决的问题主要由两个类别：递归问题和分类问题</p>
 <ul>
 <li><strong>Regression：</strong> 输出一个值的模型。例如，估算房屋价值。</li>
 <li><strong>Classfication：</strong> 一种模型，能够输出多个类别的概率分布。例如在 Fashion MNIST 模型中，输出是 10 个概率，每种服饰对应一个概率。我们在最后的密集层中使用 Softmax 激活函数创建了这个概率分布。</li>
 </ul>
-<p><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc88h1rcnyj30n60bo0vj.jpg" alt="回归和分类的比较"></p>
+<p><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc88h1rcnyj30n60bo0vj.jpg" alt="回归和分类的比较">#</p>
+<h2 id="Cha-4-CNN"><a href="#Cha-4-CNN" class="headerlink" title="Cha 4: CNN"></a>Cha 4: CNN</h2><h3 id="Sebastian访谈-2"><a href="#Sebastian访谈-2" class="headerlink" title="Sebastian访谈"></a>Sebastian访谈</h3><p>问：CNN特点<br>答：具有不变性，结构重复性，CNN的流行不是由于算法的变革，而是大数据<br>问：未来应用领域<br>答：图像，语言领域</p>
+<h3 id="CNN简介"><a href="#CNN简介" class="headerlink" title="CNN简介"></a>CNN简介</h3><p>卷积神经网络两个最重要的概念就是卷积(Convolutions)和最大池化(MaxPooling)<br><strong>卷积:</strong> 卷积的运算如下图所示，简单来说就是窗口中的每个pixel的值与卷积核中相应位置的核素相乘，最后将所有的值相加放在居中位置。在这里涉及到边缘像素处理问题，有两种处理方式，其一是将边缘的像素舍弃，但这会造成信息丢失问题；其二是将原图像边缘补0，然后再进行卷积运算。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc8qsvayfjj31ac0oyguz.jpg" alt="卷积运算示例"><br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc8qym6i5wj30nb0a30x4.jpg" alt="边缘像素处理"><br><strong>最大池化:</strong> 最大池化是指通过总结区域减小输入图像大小的流程，如下图所示，最大池化设计两个主要参数：<strong>网格(pool size)</strong>和<strong>步长(stride)</strong>. 最大池化的过程是找出网格中的pixel最大值并放在新的图像中的相应位置，步长代表窗口的滑动距离，下图中的步长为2。 MaxPooling的过程也叫做下采样。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc8rauhdo0j312u0k548x.jpg" alt="最大池化示例"></p>
+<p><strong>小结：</strong> 卷积是指向图像应用滤波器（核）的过程。最大池化是指通过下采样降低图像大小的过程。在 Keras 中使用 Conv2D 层级类型向神经网络模型中添加卷积层。此层级与密集层类似，并且需要将权重和偏差调整为合适的值。Conv2D 层级也有核（滤波器），我们也需要调整这些滤波器的值。在 Conv2D 层级中，我们将调整滤波器矩阵中的值，从而生成正确的输出。</p>
+<p><strong>术语：</strong> </p>
+<ul>
+<li><strong>CNN：</strong> 卷积神经网络。即至少有一个卷积层的网络。典型的 CNN 还包括其他类型的层级，例如池化层和密集层。</li>
+<li><strong>卷积：</strong> 向图像应用核（滤波器）的过程</li>
+<li><strong>核/滤波器：</strong> 小于输入的矩阵，用于将输入变成多个小区域</li>
+<li><strong>填充：</strong> 在输入图像周围添加像素，像素值通常为 0</li>
+<li><strong>池化：</strong> 通过下采样降低图像大小的过程。池化层有多种类型。例如，平均池化通过求平均值将多个值变成一个值。但是最大池化是最常见的池化类型。</li>
+<li><strong>最大池化：</strong> 一种池化过程，通过获取多个值中的最大值，将多个值变成一个值。</li>
+<li><strong>步长：</strong> 在图像上滑动核（滤波器）的间隔像素数量。</li>
+<li>下采样：降低图像大小的操作</li>
+</ul>
+<p>扩展阅读：<a href="https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53" target="_blank" rel="noopener">卷积神经网络综合指南</a></p>
 
         </div>
         <footer class="article-footer">
@@ -375,16 +390,16 @@ ga('send', 'pageview');
         "image": "http://yoursite.comhttps://video.udacity-data.com/topher/2019/March/5c7f0a2e_tensorflow-l1f1/tensorflow-l1f1.png",
         "keywords": "Tensorflow",
         "genre": "术业",
-        "datePublished": "2020-02-09",
-        "dateCreated": "2020-02-09",
-        "dateModified": "2020-02-24",
-        "url": "http://yoursite.com/2020/02/09/术业篇/01.Tensorflow入门_Udacity/",
+        "datePublished": "2020-02-23",
+        "dateCreated": "2020-02-23",
+        "dateModified": "2020-02-25",
+        "url": "http://yoursite.com/2020/02/23/术业篇/01.Tensorflow入门_Udacity/",
         "description": "Cha 1： Hello World基本术语
 人工智能：一种计算机科学分支，旨在让计算机达到人类的智慧。实现这一目标有很多方式，包括机器学习和深度学习。
 机器学习：一系列相关技术，用于训练计算机执行特定的任务。
 神经网络：一种机器学习结构，灵感来自人类大脑的神经元网络。神经网络是深度学习的基本概念。
 深度学习：机器学习的一个分支，利用多层神经网络实现目标。通常“机器学习”和“深度学习”可以相互指代",
-        "wordCount": 221
+        "wordCount": 270
     }
 </script>
 
@@ -465,20 +480,20 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2020/02/09/%E6%9C%AF%E4%B8%9A%E7%AF%87/Self_driving/%E8%87%AA%E9%A9%BE%E8%AE%BA%E6%96%871/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2020/02/25/%E6%9C%AF%E4%B8%9A%E7%AF%87/02.Apollo%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            Dynamic Occupancy Grid Prediction for Urban Autonomous Driving
+            Tensorflow入门_Udacity
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2020/02/07/%E5%A6%84%E8%A8%80%E7%AF%87/%E5%A6%84%E8%A8%80/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2020/02/11/%E7%8E%A9%E7%89%A9%E7%AF%87/Minecraft-Bibliothek/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">书生当谈国事</p>
+        <p class="article-nav-title">Minecraft-布伦图书馆模型</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -496,6 +511,46 @@ ga('send', 'pageview');
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/02/25/%E6%9C%AF%E4%B8%9A%E7%AF%87/02.Apollo%E5%AD%A6%E4%B9%A0/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gc8tg35onpj31950h4ai2.jpg)" alt="Tensorflow入门_Udacity" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
+                            <p class="item-title"><a href="/2020/02/25/%E6%9C%AF%E4%B8%9A%E7%AF%87/02.Apollo%E5%AD%A6%E4%B9%A0/" class="title">Tensorflow入门_Udacity</a></p>
+                            <p class="item-date"><time datetime="2020-02-24T23:00:00.000Z" itemprop="datePublished">2020-02-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/02/23/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://video.udacity-data.com/topher/2019/March/5c7f0a2e_tensorflow-l1f1/tensorflow-l1f1.png)" alt="Tensorflow入门_Udacity" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
+                            <p class="item-title"><a href="/2020/02/23/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/" class="title">Tensorflow入门_Udacity</a></p>
+                            <p class="item-date"><time datetime="2020-02-22T23:00:00.000Z" itemprop="datePublished">2020-02-23</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -540,26 +595,6 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2020/02/09/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://video.udacity-data.com/topher/2019/March/5c7f0a2e_tensorflow-l1f1/tensorflow-l1f1.png)" alt="Tensorflow入门_Udacity" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
-                            <p class="item-title"><a href="/2020/02/09/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/" class="title">Tensorflow入门_Udacity</a></p>
-                            <p class="item-date"><time datetime="2020-02-08T23:00:00.000Z" itemprop="datePublished">2020-02-09</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2020/02/07/%E5%A6%84%E8%A8%80%E7%AF%87/%E5%A6%84%E8%A8%80/" class="thumbnail">
     
     
@@ -577,26 +612,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/02/03/%E6%85%8E%E6%80%9D%E7%AF%87/%E6%85%8E%E6%80%9D%E7%AF%870/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a></p>
-                            <p class="item-title"><a href="/2020/02/03/%E6%85%8E%E6%80%9D%E7%AF%87/%E6%85%8E%E6%80%9D%E7%AF%870/" class="title">慎思篇-毕设</a></p>
-                            <p class="item-date"><time datetime="2020-02-02T23:00:00.000Z" itemprop="datePublished">2020-02-03</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -606,7 +621,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A6%84%E8%A8%80/">妄言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">5</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A6%84%E8%A8%80/">妄言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -616,7 +631,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -626,7 +641,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensorflow/" rel="tag">Tensorflow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-driving/" rel="tag">self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E6%A8%A1/" rel="tag">建模</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apollo/" rel="tag">Apollo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensorflow/" rel="tag">Tensorflow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-driving/" rel="tag">self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E6%A8%A1/" rel="tag">建模</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -636,7 +651,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Blogs/" style="font-size: 20px;">Blogs</a> <a href="/tags/CV/" style="font-size: 13.33px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/Tensorflow/" style="font-size: 10px;">Tensorflow</a> <a href="/tags/photo/" style="font-size: 16.67px;">photo</a> <a href="/tags/self-driving/" style="font-size: 10px;">self-driving</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 10px;">建模</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 13.33px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
+            <a href="/tags/Apollo/" style="font-size: 10px;">Apollo</a> <a href="/tags/Blogs/" style="font-size: 20px;">Blogs</a> <a href="/tags/CV/" style="font-size: 13.33px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/Tensorflow/" style="font-size: 10px;">Tensorflow</a> <a href="/tags/photo/" style="font-size: 16.67px;">photo</a> <a href="/tags/self-driving/" style="font-size: 10px;">self-driving</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 10px;">建模</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 13.33px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
         </div>
     </div>
 
@@ -704,7 +719,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://yoursite.com/2020/02/09/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/';
+    var disqus_url = 'http://yoursite.com/2020/02/23/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/';
     
     (function() {
     var dsq = document.createElement('script');

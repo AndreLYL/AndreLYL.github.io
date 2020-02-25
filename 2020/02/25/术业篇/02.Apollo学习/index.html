@@ -22,7 +22,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc8tg35onpj31950h4ai2.jpg">
 <meta property="article:published_time" content="2020-02-24T23:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-25T10:20:31.962Z">
+<meta property="article:modified_time" content="2020-02-25T14:30:00.885Z">
 <meta property="article:author" content="Andre">
 <meta property="article:tag" content="Apollo">
 <meta name="twitter:card" content="summary">
@@ -106,7 +106,7 @@ ga('send', 'pageview');
                                     <a class="main-nav-list-link" href="/">主页</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E5%A6%84%E8%A8%80/">妄言</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">关于</a>
@@ -210,10 +210,10 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">270</span>
+      <span class="post-count">793</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">1 分钟 </span>
+      <span class="post-count">2 分钟 </span>
    </div>
 
 
@@ -231,6 +231,8 @@ ga('send', 'pageview');
 <li>L5: Full Automation, 车辆可在任何可驾驶区域自主运行，并且该等级下车辆的自主驾驶水平大于或等于人类驾驶员的水平</li>
 </ul>
 <p><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc8tg35onpj31950h4ai2.jpg" alt="自动驾驶等级"></p>
+<h2 id="Cha2-高精度地图-HD-map"><a href="#Cha2-高精度地图-HD-map" class="headerlink" title="Cha2: 高精度地图(HD map)"></a>Cha2: 高精度地图(HD map)</h2><p><strong>简介：</strong><br>高精度地图包含大量的辅助信息，如道路网的精确三维表征(交叉路口布局，路标位置)，语义信息(信号灯，速度限制, 车道)等，高精度地图的精度可达到厘米级。高精度地图可用于定位，感知和规划等过程中。<br>定位：<br>高精度地图可以同于定位，车辆通过传感器感知的周围环境进行自定位，即根据所感知的环境信息找到自身在地图上所处位置。其流程为首先通过传感器采集数据(图像，三维点云等)，然后对数据进行预处理(消除不准确和低质量数据)，坐标转换(统一坐标系)，数据融合, 最后根据数据融合的数据和地狱进行匹配。<br>感知：<br>高精度地图和帮助无人驾驶车进行感知，用于克服传感器硬件，天气，亮度等条件对传感器感知能力的限制，除此之外高精地图可以用来缩小传感器检测范围，即为传感器提供ROI，其优点是可以提高检测精度和速度，同时也节约了计算能力。<br>规划：<br>高精度地图可以帮助车辆寻找合适的行车空间，用于路线规划；同时也可以告知车辆其他车辆可能出现的位置。在具有速度限制，障碍物的区域，高精度地图也可以为车辆的减速，变道等操作提供依据。</p>
+<h3 id="Apollo高精度地图"><a href="#Apollo高精度地图" class="headerlink" title="Apollo高精度地图"></a>Apollo高精度地图</h3><p>Apollo的高精度地图采用OpenDRIVE标准，该标准格式可以像API一样方便调用，Apollo对该制图标准进行了改进，即Apollo OpenDRIVE.两种标准比较见下图。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc90cwz33tj30ry0flgod.jpg" alt="Apollo高精度地图道路元素"><br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc90een48cj30sh0ec0tk.jpg" alt="两种标准对比"><br>Apollo高精度地图的准确性要求比较高，因此需要调查车队对地图进行不断的更新，其构建过程如下图。除了高精度地图以外，Apollo还提供了俯瞰图和3D点云地图。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc90gisrfnj311o0knqo7.jpg" alt="地图构建过程"></p>
 
         </div>
         <footer class="article-footer">
@@ -314,7 +316,7 @@ ga('send', 'pageview');
 L0： 基本等级，驾驶者是唯一决策者
 L1：Driver Assistance, 车辆为驾驶员提供转向或加速支持，如cruise control
 L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise control, Automatic Lane Keeping, 但驾驶员始终保持对系统的",
-        "wordCount": 42
+        "wordCount": 63
     }
 </script>
 
@@ -500,7 +502,7 @@ L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise co
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2020/02/07/%E5%A6%84%E8%A8%80%E7%AF%87/%E5%A6%84%E8%A8%80/" class="thumbnail">
+                            <a href="/2020/02/03/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AF-%E6%AF%95%E8%AE%BE%E7%AF%87/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -511,9 +513,9 @@ L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise co
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E5%A6%84%E8%A8%80/">妄言</a></p>
-                            <p class="item-title"><a href="/2020/02/07/%E5%A6%84%E8%A8%80%E7%AF%87/%E5%A6%84%E8%A8%80/" class="title">书生当谈国事</a></p>
-                            <p class="item-date"><time datetime="2020-02-06T23:00:00.000Z" itemprop="datePublished">2020-02-07</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
+                            <p class="item-title"><a href="/2020/02/03/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AF-%E6%AF%95%E8%AE%BE%E7%AF%87/" class="title">自动驾驶的修炼之路-毕设篇</a></p>
+                            <p class="item-date"><time datetime="2020-02-02T23:00:00.000Z" itemprop="datePublished">2020-02-03</time></p>
                         </div>
                     </li>
                 
@@ -526,7 +528,7 @@ L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise co
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A6%84%E8%A8%80/">妄言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">5</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -536,7 +538,7 @@ L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise co
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 

@@ -21,7 +21,7 @@
 <meta property="og:description" content="谷歌自动驾驶车项目2017：https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;O2bXF7XJ5P0&amp;feature&#x3D;youtu.be&amp;t&#x3D;2343行为预测介绍博客：https:&#x2F;&#x2F;www.jiqizhixin.com&#x2F;articles&#x2F;2019-02-13-23 （伯克利博士）https:&#x2F;&#x2F;www.jiqizhixin.com&#x2F;articles&#x2F;2019-05-1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-02T23:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-14T15:53:54.516Z">
+<meta property="article:modified_time" content="2020-02-25T14:58:45.306Z">
 <meta property="article:author" content="Andre">
 <meta property="article:tag" content="self-driving">
 <meta name="twitter:card" content="summary">
@@ -104,7 +104,7 @@ ga('send', 'pageview');
                                     <a class="main-nav-list-link" href="/">主页</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E5%A6%84%E8%A8%80/">妄言</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">关于</a>
@@ -208,10 +208,10 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">410</span>
+      <span class="post-count">107</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">2 分钟 </span>
+      <span class="post-count">1 分钟 </span>
    </div>
 
 
@@ -220,34 +220,6 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             <p>谷歌自动驾驶车项目2017：<a href="https://www.youtube.com/watch?v=O2bXF7XJ5P0&amp;feature=youtu.be&amp;t=2343" target="_blank" rel="noopener">https://www.youtube.com/watch?v=O2bXF7XJ5P0&amp;feature=youtu.be&amp;t=2343</a><br>行为预测介绍博客：<br><a href="https://www.jiqizhixin.com/articles/2019-02-13-23" target="_blank" rel="noopener">https://www.jiqizhixin.com/articles/2019-02-13-23</a> （伯克利博士）<br><a href="https://www.jiqizhixin.com/articles/2019-05-14-4" target="_blank" rel="noopener">https://www.jiqizhixin.com/articles/2019-05-14-4</a> （美团）<br><a href="https://cloud.tencent.com/developer/news/377875" target="_blank" rel="noopener">https://cloud.tencent.com/developer/news/377875</a>  （激光雷达目标检测上）<br><a href="https://cloud.tencent.com/developer/news/378562" target="_blank" rel="noopener">https://cloud.tencent.com/developer/news/378562</a> （激光雷达目标检测下）<br><a href="https://cloud.tencent.com/developer/article/1509299" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1509299</a> （激光雷达目标检测论文集）</p>
-<h2 id="概念扫盲"><a href="#概念扫盲" class="headerlink" title="概念扫盲"></a>概念扫盲</h2><ul>
-<li><strong>Point clouds:</strong> 点云，点云是代表3D形状或特征的点的集合。 每个点云数据除了都有自己的X，Y和Z坐标外，还含有强度（Intensity）信息或者含有色彩信息（R,G,B）</li>
-<li><strong>Voxel:</strong> 体素，三维图像的最小单元，类比于像素，二维图像的最小单元。</li>
-<li><strong>RNN:</strong> 循环神经网络</li>
-<li><strong>tensor:</strong> 张量，即多维数组</li>
-</ul>
-<h2 id="论文阅读"><a href="#论文阅读" class="headerlink" title="论文阅读"></a>论文阅读</h2><h3 id="论文1：Fast-und-Furious-Real-Time-End-to-End-3D-Detection-Tracking-und-Motion-Forecasting-with-a-Single-Convollutional-Net"><a href="#论文1：Fast-und-Furious-Real-Time-End-to-End-3D-Detection-Tracking-und-Motion-Forecasting-with-a-Single-Convollutional-Net" class="headerlink" title="论文1：Fast und Furious: Real Time End-to-End 3D Detection, Tracking und Motion Forecasting with a Single Convollutional Net"></a>论文1：Fast und Furious: Real Time End-to-End 3D Detection, Tracking und Motion Forecasting with a Single Convollutional Net</h3><ul>
-<li>论文翻译：<a href="http://www.pianshen.com/article/5580792527/;jsessionid=95E2157CC919D99443CB6F3A3D645720" target="_blank" rel="noopener">http://www.pianshen.com/article/5580792527/;jsessionid=95E2157CC919D99443CB6F3A3D645720</a></li>
-<li>笔记：<pre><code>a. Purpose: 3D detection, Tracking and Motion Forecasting
-b. Result: 
-    i. perform all tasks in 30ms
-c. Method: a Single Convolutional Net + time information
-d. Feature: 
-    i. real time  &lt;- by sharing computations between all these tasks
-    ii. End to End
-    iii. More robust to occlusion as well as spares data at range
-e. Detail:
-    i. Network operates on a bird-eye-view of the 3D world
-    ii. This network is one stage dector (take 4D tensor &lt;- Voxel + time)
-    iii. Voxel representation: 
-        1) point cloud data is sparse compared to dense RGB image(save a lot of computation)
-    iv. Adding temporal Information (provide more Information like heading and velocity)
-    v. Model Formulation:
-        1) Take 4D Input tensor
-        2) Do directly bounding box regression at different timestamps
-        3) Early fusion: add temporal information at the very first layer -&gt; fast but short for capturing complex feature.
-        4) Late fusion: gradually merge the temporal information to capture high level motion feature</code></pre></li>
-</ul>
 
         </div>
         <footer class="article-footer">
@@ -324,10 +296,10 @@ e. Detail:
         "genre": "术业",
         "datePublished": "2020-02-03",
         "dateCreated": "2020-02-03",
-        "dateModified": "2020-02-14",
+        "dateModified": "2020-02-25",
         "url": "http://yoursite.com/2020/02/03/自动驾驶修炼之路-毕设篇/",
         "description": "谷歌自动驾驶车项目2017：https://www.youtube.com/watch?v=O2bXF7XJ5P0&amp;feature=youtu.be&amp;t=2343行为预测介绍博客：https://www.jiqizhixin.com/articles/2019-02-13-23 （伯克利博士）https://www.jiqizhixin.com/articles/2019-05-1",
-        "wordCount": 298
+        "wordCount": 25
     }
 </script>
 
@@ -408,11 +380,11 @@ e. Detail:
         
 <nav id="article-nav">
     
-        <a href="/2020/02/07/%E5%A6%84%E8%A8%80%E7%AF%87/%E5%A6%84%E8%A8%80/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2020/02/09/%E6%9C%AF%E4%B8%9A%E7%AF%87/Self_driving/%E8%87%AA%E9%A9%BE%E8%AE%BA%E6%96%871/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            书生当谈国事
+            Dynamic Occupancy Grid Prediction for Urban Autonomous Driving
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
@@ -523,7 +495,7 @@ e. Detail:
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2020/02/07/%E5%A6%84%E8%A8%80%E7%AF%87/%E5%A6%84%E8%A8%80/" class="thumbnail">
+                            <a href="/2020/02/03/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AF-%E6%AF%95%E8%AE%BE%E7%AF%87/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -534,9 +506,9 @@ e. Detail:
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E5%A6%84%E8%A8%80/">妄言</a></p>
-                            <p class="item-title"><a href="/2020/02/07/%E5%A6%84%E8%A8%80%E7%AF%87/%E5%A6%84%E8%A8%80/" class="title">书生当谈国事</a></p>
-                            <p class="item-date"><time datetime="2020-02-06T23:00:00.000Z" itemprop="datePublished">2020-02-07</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
+                            <p class="item-title"><a href="/2020/02/03/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AF-%E6%AF%95%E8%AE%BE%E7%AF%87/" class="title">自动驾驶的修炼之路-毕设篇</a></p>
+                            <p class="item-date"><time datetime="2020-02-02T23:00:00.000Z" itemprop="datePublished">2020-02-03</time></p>
                         </div>
                     </li>
                 
@@ -549,7 +521,7 @@ e. Detail:
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A6%84%E8%A8%80/">妄言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">5</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -559,7 +531,7 @@ e. Detail:
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 

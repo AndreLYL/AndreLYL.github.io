@@ -16,13 +16,13 @@
     <meta name="description" content="Cha1: 自动驾驶概述自动驾驶的等级共有六个等级：  L0： 基本等级，驾驶者是唯一决策者 L1：Driver Assistance, 车辆为驾驶员提供转向或加速支持，如cruise control L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise control, Automatic Lane Keeping, 但驾驶员始终保持对系统的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Apollo学习">
-<meta property="og:url" content="http://yoursite.com/2020/02/25/%E6%9C%AF%E4%B8%9A%E7%AF%87/02.Apollo%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/02/25/%E6%9C%AF%E4%B8%9A%E7%AF%87/02.Apollo_01/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Cha1: 自动驾驶概述自动驾驶的等级共有六个等级：  L0： 基本等级，驾驶者是唯一决策者 L1：Driver Assistance, 车辆为驾驶员提供转向或加速支持，如cruise control L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise control, Automatic Lane Keeping, 但驾驶员始终保持对系统的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc8tg35onpj31950h4ai2.jpg">
 <meta property="article:published_time" content="2020-02-24T23:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-25T15:03:29.350Z">
+<meta property="article:modified_time" content="2020-02-29T11:42:11.612Z">
 <meta property="article:author" content="Andre">
 <meta property="article:tag" content="Apollo">
 <meta name="twitter:card" content="summary">
@@ -172,7 +172,7 @@ ga('send', 'pageview');
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-术业篇/02.Apollo学习" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-术业篇/02.Apollo_01" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -190,7 +190,7 @@ ga('send', 'pageview');
                 
     <div class="article-date">
       <i class="fa fa-calendar"></i>
-      <a href="/2020/02/25/%E6%9C%AF%E4%B8%9A%E7%AF%87/02.Apollo%E5%AD%A6%E4%B9%A0/" class="article-date">
+      <a href="/2020/02/25/%E6%9C%AF%E4%B8%9A%E7%AF%87/02.Apollo_01/" class="article-date">
          <time datetime="2020-02-24T23:00:00.000Z" itemprop="datePublished">2020-02-25</time>
       </a>
     </div>
@@ -210,10 +210,10 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">793</span>
+      <span class="post-count">1.8k</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">2 分钟 </span>
+      <span class="post-count">6 分钟 </span>
    </div>
 
 
@@ -233,6 +233,15 @@ ga('send', 'pageview');
 <p><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc8tg35onpj31950h4ai2.jpg" alt="自动驾驶等级"></p>
 <h2 id="Cha2-高精度地图-HD-map"><a href="#Cha2-高精度地图-HD-map" class="headerlink" title="Cha2: 高精度地图(HD map)"></a>Cha2: 高精度地图(HD map)</h2><p><strong>简介：</strong><br>高精度地图包含大量的辅助信息，如道路网的精确三维表征(交叉路口布局，路标位置)，语义信息(信号灯，速度限制, 车道)等，高精度地图的精度可达到厘米级。高精度地图可用于定位，感知和规划等过程中。<br>定位：<br>高精度地图可以同于定位，车辆通过传感器感知的周围环境进行自定位，即根据所感知的环境信息找到自身在地图上所处位置。其流程为首先通过传感器采集数据(图像，三维点云等)，然后对数据进行预处理(消除不准确和低质量数据)，坐标转换(统一坐标系)，数据融合, 最后根据数据融合的数据和地狱进行匹配。<br>感知：<br>高精度地图和帮助无人驾驶车进行感知，用于克服传感器硬件，天气，亮度等条件对传感器感知能力的限制，除此之外高精地图可以用来缩小传感器检测范围，即为传感器提供ROI，其优点是可以提高检测精度和速度，同时也节约了计算能力。<br>规划：<br>高精度地图可以帮助车辆寻找合适的行车空间，用于路线规划；同时也可以告知车辆其他车辆可能出现的位置。在具有速度限制，障碍物的区域，高精度地图也可以为车辆的减速，变道等操作提供依据。</p>
 <h3 id="Apollo高精度地图"><a href="#Apollo高精度地图" class="headerlink" title="Apollo高精度地图"></a>Apollo高精度地图</h3><p>Apollo的高精度地图采用OpenDRIVE标准，该标准格式可以像API一样方便调用，Apollo对该制图标准进行了改进，即Apollo OpenDRIVE.两种标准比较见下图。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc90cwz33tj30ry0flgod.jpg" alt="Apollo高精度地图道路元素"><br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc90een48cj30sh0ec0tk.jpg" alt="两种标准对比"><br>Apollo高精度地图的准确性要求比较高，因此需要调查车队对地图进行不断的更新，其构建过程如下图。除了高精度地图以外，Apollo还提供了俯瞰图和3D点云地图。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc90gisrfnj311o0knqo7.jpg" alt="地图构建过程"></p>
+<h2 id="Cha3-定位"><a href="#Cha3-定位" class="headerlink" title="Cha3: 定位"></a>Cha3: 定位</h2><p>定位是让无人车确定自身位置的方法，常用的定位的方法有：GNSS RTK, 惯性导航，Lidar定位和视觉定位。定位所需要的输入有：GPS, IMU, LiDAR等。<br><strong>GNSS RTK：</strong><br>GNSS RTK定位的基础是三角测量，如下图所示，在平面上确定一个点的位置需要三个地标，在空间中则需要一个额外的地标来确定海拔。因此GPS需要至少4颗卫星才能进行定位。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc9wl8jpx4j30ur0p0n4s.jpg" alt="三角测量原理"><br>GPS是全球定位系统，是美国开发的定位系统名称。但该类系统的通用名称叫做全球导航卫星系统(GNSS)。GPS系统有三部分组成：</p>
+<ul>
+<li>卫星：大约30颗，距地约两万公里</li>
+<li>控制站：监控和控制卫星，验证GPS精度</li>
+<li>GPS接收器: 不直接检测距离，而是检测信号飞行时间，计算方法如下下图。为保证精度，每颗卫星都有原子钟以保证时间的准确性<br>GPS定位进一步减小误差的方法是实时运动定位(RTK), 通过卫星和基站的误差进行修正，通过误差可以将误差限制在10cm内。因此GPS定位系统的精度可以信赖，但收遮挡和区域的影响，并且更新频率很低(10Hz)。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc9wr1nnk6j313z0oxwlq.jpg" alt="GPS结构"><br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc9wslchbwj30g1057jsf.jpg" alt="距离计算方法"><br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc9wwlluq3j30k90bg0ve.jpg" alt="RTK原理"></li>
+</ul>
+<p><strong>惯性导航：</strong><br>基本原理是初中物理(v, a, t)，加速度采用三轴加速度计进行测量，并且借助陀螺仪的(3D Gyro)将加速度从Ego坐标系转换到全局坐标系。加速度计+陀螺仪=IMU，IMU工作频率很高，实时性强，但误差会随着时间而积累。<br><strong>LiDAR定位：</strong><br>LiDAR定位的方法是通过点云匹配，滤波等算法实现的。点云匹配算法(迭代最近点/ICP)的思想是：假设需要对两次点云扫描的数据进行匹配，首先建立两次扫描的匹配点对，然后将每对点之间的距离误差相加来计算平均距离误差，接下来的目标是通过点云的平移和旋转来最小化平均距离误差，从而可以找到传感器扫描和地图之间的匹配，最终将传感器扫描到的车辆位置转换为全球地图上的精确位置。滤波算法通过过滤冗余信息来在地图上找到最可能的车辆位置。Apollo采用直方图滤波算法(误差平方和算法/SSD)，该方法首先将传感器扫描的点云滑过地图上的每个位置，在每个位置计算扫描的点与高精度地图对应点之间的误差或距离，然后对误差的平方求和，得到的结果越小，则扫描结果与地图的匹配越好。此外还有卡尔曼滤波算法，该算法根据过去的状态和新的传感器测量结果预测当前的状态，即使用了预测更新周期。<br>LiDAR的优点在于稳健性(robust)，但其难点是构建高精度地图并使其保持最新(瞬态元素太多？)。</p>
+<p><strong>视觉定位：</strong><br>视觉定位的优点是：图像数据类型获取成本较低，并且摄像头传感器种类繁多，价格便宜; 但通过图像很难实现精准定位，因此经常与其他传感器数据相结合来准确定位车辆(如：3D map + Image)。比如采用粒子滤波来确定汽车检测到的树对应地图上的哪棵树(如下图)。同样可以使用粒子滤波的原理确定车辆在车道线上的位置。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gcdi05bdn4j30op0li42s.jpg" alt="粒子滤波视觉定位"><br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gcdi30d2ukj30re0d0afm.jpg" alt="粒子滤波过程"></p>
+<p><strong>Apollo定位</strong><br>Apollo使用基于GPS, IMU和Lidar的多传感器融合定位系统，利用不同传感器的特性和优势，提高了定位的稳定性和准确性。数据融合的框架是卡尔曼滤波。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gcdia66umij31pc16k7jg.jpg" alt="数据融合框架"></p>
 
         </div>
         <footer class="article-footer">
@@ -309,14 +318,14 @@ ga('send', 'pageview');
         "genre": "术业",
         "datePublished": "2020-02-25",
         "dateCreated": "2020-02-25",
-        "dateModified": "2020-02-25",
-        "url": "http://yoursite.com/2020/02/25/术业篇/02.Apollo学习/",
+        "dateModified": "2020-02-29",
+        "url": "http://yoursite.com/2020/02/25/术业篇/02.Apollo_01/",
         "description": "Cha1: 自动驾驶概述自动驾驶的等级共有六个等级：
 
 L0： 基本等级，驾驶者是唯一决策者
 L1：Driver Assistance, 车辆为驾驶员提供转向或加速支持，如cruise control
 L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise control, Automatic Lane Keeping, 但驾驶员始终保持对系统的",
-        "wordCount": 63
+        "wordCount": 99
     }
 </script>
 
@@ -398,7 +407,7 @@ L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise co
 <nav id="article-nav">
     
     
-        <a href="/2020/02/23/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2020/02/23/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow_Udacity/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
         <p class="article-nav-title">Tensorflow入门_Udacity</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
@@ -422,7 +431,7 @@ L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise co
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2020/02/25/%E6%9C%AF%E4%B8%9A%E7%AF%87/02.Apollo%E5%AD%A6%E4%B9%A0/" class="thumbnail">
+                            <a href="/2020/02/25/%E6%9C%AF%E4%B8%9A%E7%AF%87/02.Apollo_01/" class="thumbnail">
     
     
         <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gc8tg35onpj31950h4ai2.jpg)" alt="Apollo学习" class="thumbnail-image"></span>
@@ -434,7 +443,7 @@ L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise co
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
-                            <p class="item-title"><a href="/2020/02/25/%E6%9C%AF%E4%B8%9A%E7%AF%87/02.Apollo%E5%AD%A6%E4%B9%A0/" class="title">Apollo学习</a></p>
+                            <p class="item-title"><a href="/2020/02/25/%E6%9C%AF%E4%B8%9A%E7%AF%87/02.Apollo_01/" class="title">Apollo学习</a></p>
                             <p class="item-date"><time datetime="2020-02-24T23:00:00.000Z" itemprop="datePublished">2020-02-25</time></p>
                         </div>
                     </li>
@@ -442,7 +451,7 @@ L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise co
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2020/02/23/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/" class="thumbnail">
+                            <a href="/2020/02/23/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow_Udacity/" class="thumbnail">
     
     
         <span style="background-image:url(https://video.udacity-data.com/topher/2019/March/5c7f0a2e_tensorflow-l1f1/tensorflow-l1f1.png)" alt="Tensorflow入门_Udacity" class="thumbnail-image"></span>
@@ -454,7 +463,7 @@ L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise co
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
-                            <p class="item-title"><a href="/2020/02/23/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow%E5%85%A5%E9%97%A8_Udacity/" class="title">Tensorflow入门_Udacity</a></p>
+                            <p class="item-title"><a href="/2020/02/23/%E6%9C%AF%E4%B8%9A%E7%AF%87/01.Tensorflow_Udacity/" class="title">Tensorflow入门_Udacity</a></p>
                             <p class="item-date"><time datetime="2020-02-22T23:00:00.000Z" itemprop="datePublished">2020-02-23</time></p>
                         </div>
                     </li>
@@ -626,7 +635,7 @@ L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise co
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://yoursite.com/2020/02/25/%E6%9C%AF%E4%B8%9A%E7%AF%87/02.Apollo%E5%AD%A6%E4%B9%A0/';
+    var disqus_url = 'http://yoursite.com/2020/02/25/%E6%9C%AF%E4%B8%9A%E7%AF%87/02.Apollo_01/';
     
     (function() {
     var dsq = document.createElement('script');

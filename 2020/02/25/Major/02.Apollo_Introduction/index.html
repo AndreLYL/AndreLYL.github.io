@@ -22,7 +22,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc8tg35onpj31950h4ai2.jpg">
 <meta property="article:published_time" content="2020-02-24T23:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-29T11:51:14.851Z">
+<meta property="article:modified_time" content="2020-03-04T12:12:24.708Z">
 <meta property="article:author" content="Andre">
 <meta property="article:tag" content="Apollo">
 <meta name="twitter:card" content="summary">
@@ -210,10 +210,10 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">1.8k</span>
+      <span class="post-count">3.7k</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">6 分钟 </span>
+      <span class="post-count">12 分钟 </span>
    </div>
 
 
@@ -242,6 +242,35 @@ ga('send', 'pageview');
 <p><strong>惯性导航：</strong><br>基本原理是初中物理(v, a, t)，加速度采用三轴加速度计进行测量，并且借助陀螺仪的(3D Gyro)将加速度从Ego坐标系转换到全局坐标系。加速度计+陀螺仪=IMU，IMU工作频率很高，实时性强，但误差会随着时间而积累。<br><strong>LiDAR定位：</strong><br>LiDAR定位的方法是通过点云匹配，滤波等算法实现的。点云匹配算法(迭代最近点/ICP)的思想是：假设需要对两次点云扫描的数据进行匹配，首先建立两次扫描的匹配点对，然后将每对点之间的距离误差相加来计算平均距离误差，接下来的目标是通过点云的平移和旋转来最小化平均距离误差，从而可以找到传感器扫描和地图之间的匹配，最终将传感器扫描到的车辆位置转换为全球地图上的精确位置。滤波算法通过过滤冗余信息来在地图上找到最可能的车辆位置。Apollo采用直方图滤波算法(误差平方和算法/SSD)，该方法首先将传感器扫描的点云滑过地图上的每个位置，在每个位置计算扫描的点与高精度地图对应点之间的误差或距离，然后对误差的平方求和，得到的结果越小，则扫描结果与地图的匹配越好。此外还有卡尔曼滤波算法，该算法根据过去的状态和新的传感器测量结果预测当前的状态，即使用了预测更新周期。<br>LiDAR的优点在于稳健性(robust)，但其难点是构建高精度地图并使其保持最新(瞬态元素太多？)。</p>
 <p><strong>视觉定位：</strong><br>视觉定位的优点是：图像数据类型获取成本较低，并且摄像头传感器种类繁多，价格便宜; 但通过图像很难实现精准定位，因此经常与其他传感器数据相结合来准确定位车辆(如：3D map + Image)。比如采用粒子滤波来确定汽车检测到的树对应地图上的哪棵树(如下图)。同样可以使用粒子滤波的原理确定车辆在车道线上的位置。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gcdi05bdn4j30op0li42s.jpg" alt="粒子滤波视觉定位"><br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gcdi30d2ukj30re0d0afm.jpg" alt="粒子滤波过程"></p>
 <p><strong>Apollo定位</strong><br>Apollo使用基于GPS, IMU和Lidar的多传感器融合定位系统，利用不同传感器的特性和优势，提高了定位的稳定性和准确性。数据融合的框架是卡尔曼滤波。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gcdia66umij31pc16k7jg.jpg" alt="数据融合框架"></p>
+<h2 id="Cha4-感知"><a href="#Cha4-感知" class="headerlink" title="Cha4: 感知"></a>Cha4: 感知</h2><p>在自动驾驶控制系统的架构当中，自动驾驶车辆的感知系统是车辆路径规划的主要依据之一。感知系统最主要采用的传感器是Camera和Lidar。Camera图像的形式为RGB或者灰度，可以提供颜色，形状和纹理等信息; Lidar图像提供环境的点云特征，其原理是Lidar中激光束的反射，所收集的信息形成点云，每个点代表反射回传感器的激光束。点云数据中包含距离，高度以及表面和纹理信息。最终，感知模块的输出有四周车辆的三维识别框; 所检测的车辆的速度，角速度，方向; 地面标识，车道线等。 这里要注意的是感知模块的输出不是传感器的原始信息。在感知层面上，自动驾驶车辆主要有四个核心任务：</p>
+<ul>
+<li>Detection: 检测，确定物体的具体位置</li>
+<li>Classification: 分类，明确对象类别</li>
+<li>Tracking: 跟踪，随着时间的推移观察移动物体</li>
+<li>Segmentation: 分割，即语义分割，将图像的每个像素与语义类别相匹配</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gci255yrgsj30kx09naf2.jpg" alt="Pipeline of Classification"></p>
+<p><strong>机器学习</strong><br>机器学习是一种方法论，采用模型来对传感器的数据进行处理，模型需要学习过程，根据其学习的方法可分为：</p>
+<ul>
+<li>supervised Learning: 需要有标注的数据进行训练</li>
+<li>Unsupervised Learning: 采用无标注的数据进行训练</li>
+<li>Semi-supervised Learning： 半监督，两者结合</li>
+<li>Reinforcement Learning: 强化学习，允许模型采用不同的方法解决问题，并衡量哪一种方法更加成功。</li>
+</ul>
+<p><strong>反向传播算法</strong><br>反向传播算法的过程由<em>前馈</em>，<em>误差测定</em>，和<em>反向传播</em>三个部分组成。</p>
+<p><strong>卷积神经网络</strong><br>标准的神经网络在处理图像分类问题的时候，需要首先采用平滑化操作(Flatten)将二维的图像变成一维的向量，即将所有的图像展开为一维像素序列，但这种方法的问题是会丢失图像的空间信息。<strong>CNN通过卷积操作来维持输入像素之间的空间关系来解决这一个问题。</strong> 如下图的CNN结构，在每一层上CNN采用不同的卷积算子来提取不同的图像特征如边缘，部件，色彩等，最终通过学习过程来找出哪些特征是重要的。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gci3p5x2ogj30fh0akdir.jpg" alt="CNN检测原理"></p>
+<p><strong>目标检测与分类</strong><br>检测算法有两种流派：</p>
+<ul>
+<li>Two stage model: RCNN, fast FCNN, Faster RCNN</li>
+<li>One stage model: YOLO, SSD</li>
+</ul>
+<p><strong>跟踪</strong><br>在检测出目标后，需要对目标进行跟踪，Tracking的意义在于可以解决在视频流中物体的遮挡问题，并且可保留识别码。<a href="https://zhuanlan.zhihu.com/p/70268783" target="_blank" rel="noopener">知乎：工程实践中，目标检测为何要加目标追踪？</a><br><strong>分割</strong><br>语义分割设计对图像的每个像素进行分类，在自动驾驶中用于寻找通行空间。算法上语义分割依赖于全卷积网络(FCN)。不同于CNN，FCN采用卷积层来替代传统CNN结果的平滑层(flat layers)。在FCN中，输入图像经过多次卷积后得到的输出图像将比输入图像小，为了进行像素分割操作，可网络的中间输出采用上采样处理，使得最终输出的大小与原始图像大小相匹配。如下图，网络的前半部分被称为编码器，后半部分为解码器<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gci4o0ugsaj31cf0l5n69.jpg" alt="FCN网络(Encoder + Decoder)"></p>
+<p><strong>Apollo感知</strong><br>对于三维对象的检测，Apollo的感知系统采用ROI来重点关注相关对象，Apollo将ROI fliter应用于点云和图像数据，用来缩小搜索范围并加快感知。其检测网络的结构如下图，检测网络的输出用于构建对象的Bounding box。紧接着采用检测和跟踪结合的算法来在时间步中检测单个对象。Apollo采用高精度地图来确定前方是否有信号灯，采用YOLO来检测车道线和动态目标。在通过YOLO网络检测后，在线检测模块会并入来自其他传感器的数据对车道线预测进行调整，车道线最终被放入Virtual Lane的数据结构中。同时来自其他传感器的数据也会对YOLO网络所检测到的动态对象进行调整，以获得每个对象的类别，位置，速度和前进方向。车道预测结果和动态对象检测结果最终均被传递到规划和控制模块。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gci4sa3vknj30lo08v763.jpg" alt="Detection Network"></p>
+<p><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gci51rtemvj31aw0kqgyr.jpg" alt="pipeline of Apollo"></p>
+<p><strong>传感器数据比较</strong><br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gci5b4et0rj31by0l0dzb.jpg" alt="传感器性能比较"></p>
+<p><strong>Radar和Lidar补充知识</strong><br>在汽车系统中雷达主要应用于自适应巡航控制、盲点警告、碰撞浸膏和碰撞预防等系统中。尽管雷达技术已经成熟，它仍在不断进步，作用不断提升。其他传感器测量速度的方法是计算两次读数之间的差距，而<strong>雷达则通过多普勒效应来直接测量速度</strong>。多普勒效应对传感器融合至关重要。因为它可以把速度作为独立的测量参数，从而提升了融合算法的收敛速度。雷达还可以生成环境的雷达地图，进而实现定位。因为雷达波在坚硬表面会回弹。因此，它可以直接测量对象距离，无需在视线范围内也可以。雷达可以看到其他车辆底部。并发现可能会被阻挡的建筑物和对象。在车上的所有传感器中，雷达是至不容易受雨雾影响的。而且视野宽阔，可达150度，距离可达200多米。与激光雷达和摄像头相比，雷达分辨率较低，尤其是在垂直方向，分辨率非常有限。分辨率低意味着来自静态物体的反射可能产生问题。例如，街道上检修孔盖或汽水罐，可能产生很高的雷达反射率，但他们并不大。我们将其称为雷达杂波。因此，当前的车载雷达通常会忽视静态物体。</p>
+<p>激光雷达是激光探测与测量的简称，而雷达则谁无线电探测与测量的简称。雷达使用无线电波，而激光雷达则使用红激光束来确定传感器和附近对象的距离。目前的激光雷达大多使用 900 纳米光波长度的光源。但部分激光雷达使用的光波长度更长，在雨雾中性能更好。当前的激光雷达使用旋转座架发射激光，扫描周边环境。激光室脉冲式的，脉冲被对象反射，然后返回一个点云，来代表这些物体。激光雷达的空间分辨率远远高于雷达。因为激光束越聚焦，垂直方向的扫描层数量就越多，因此每层的激光雷达的密度也越高。目前，激光雷达还不能直接测量对象的速度，必须使用两次或多次扫描之间的位置差来确定。激光雷达受天气和传感器清洁程度影响也很大，因此需要保持清洁。它们块头也比其他传感器更大，因此也很难安装，除非你只想在车顶安装一个大的激光扫描器。</p>
+<p><strong>感知融合策略</strong><br>Apollo采用Lidar和Radar来检测障碍物，用于融合输出的主要算法为卡尔曼滤波。</p>
 
         </div>
         <footer class="article-footer">
@@ -316,14 +345,14 @@ ga('send', 'pageview');
         "genre": "术业",
         "datePublished": "2020-02-25",
         "dateCreated": "2020-02-25",
-        "dateModified": "2020-02-29",
+        "dateModified": "2020-03-04",
         "url": "http://yoursite.com/2020/02/25/Major/02.Apollo_Introduction/",
         "description": "Cha1: 自动驾驶概述自动驾驶的等级共有六个等级：
 
 L0： 基本等级，驾驶者是唯一决策者
 L1：Driver Assistance, 车辆为驾驶员提供转向或加速支持，如cruise control
 L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise control, Automatic Lane Keeping, 但驾驶员始终保持对系统的",
-        "wordCount": 99
+        "wordCount": 161
     }
 </script>
 

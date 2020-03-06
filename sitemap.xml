@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/02/25/Major/02.Apollo_Introduction/</loc>
+    
+    <lastmod>2020-03-06T09:55:48.800Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2020-03-04T18:25:19.415Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/2019/02/19/first_blog/</loc>
     
     <lastmod>2020-03-04T18:22:04.822Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/02/25/Major/02.Apollo_Introduction/</loc>
-    
-    <lastmod>2020-03-04T12:12:24.708Z</lastmod>
     
   </url>
   
@@ -154,6 +154,13 @@
 <urlset xmlns="https://andrelyl.github.io/schemas/sitemap/1.0">
   
       
+        https://andrelyl.github.io/2020/02/25/Major/02.Apollo_Introduction/
+        
+        2020-03-06T09:55:48.800Z
+        
+      
+      
+      
         https://andrelyl.github.io/about/index.html
         
         2020-03-04T18:25:19.415Z
@@ -164,13 +171,6 @@
         https://andrelyl.github.io/2019/02/19/first_blog/
         
         2020-03-04T18:22:04.822Z
-        
-      
-      
-      
-        https://andrelyl.github.io/2020/02/25/Major/02.Apollo_Introduction/
-        
-        2020-03-04T12:12:24.708Z
         
       
       

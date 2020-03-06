@@ -22,7 +22,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006E0Yd9gy1gc8tg35onpj31950h4ai2.jpg">
 <meta property="article:published_time" content="2020-02-24T23:00:00.000Z">
-<meta property="article:modified_time" content="2020-03-06T09:55:48.800Z">
+<meta property="article:modified_time" content="2020-03-06T16:15:02.448Z">
 <meta property="article:author" content="Andre">
 <meta property="article:tag" content="Apollo">
 <meta name="twitter:card" content="summary">
@@ -210,10 +210,10 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">6.2k</span>
+      <span class="post-count">7k</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">21 分钟 </span>
+      <span class="post-count">24 分钟 </span>
    </div>
 
 
@@ -286,6 +286,12 @@ ga('send', 'pageview');
 <p><strong>LQR</strong><br>LQR是基于模型的控制器，使用车辆状态来最小化误差。Apollo 使用 LQR 进行横向控制，横向控制包含四个参数：横向误差、横向误差的变化率、朝向误差、朝向的变化率。用集合x表示 ，x可捕获车辆的状态。车辆有三个控制输入：转向、加速、制动，用集合u表示。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gckc7l1xumj30jt0b9q5s.jpg" alt="x,u"><br>在线性控制时，其控制器模型如下图。x_dot是导数或x向量的变化率。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gckc3eknlcj30j00a175y.jpg" alt="linear Quadrator regulator"><br>该等式是线性的，因为用△x来改变x时，并用△u来改变u，x点的变化也会让这个等式成立。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gckc5bl3aaj30km09ymyi.jpg" alt="linear Quadrator regulator"><br>控制的目标是为了让误差最小化同时尽可能少地使用控制输入，由于使用这些会有成本。为了尽量减少这些因素，可以保持误差的运行总和和控制输入的运行总和。当汽车往右偏转得特别厉害之际，添加到误差总和中，当控制输入将汽车往左侧转时，从控制输入总和中减去一点。然而这种方法会导致问题，因为右侧的正误差只需将左侧的负误差消除即可，对控制输入​​来说也是如此。相反可以让x乘以u，这样负值也会产生正平方，称这些为二次项。为这些项分配权重并将它们加在一起，最优的u应该加倍减总和，在数学中将这个值称为成本函数。经常写出加权二次项的总和，这里Q和R代表x和u的权重集合, X和Ut是转置矩阵，意味着它们几乎与x和u相同，只是重新排列 以便矩阵乘法。x乘以Xt,u乘以Ut，实质上是将每个矩阵乘以它自己。最小化成本函数是一个复杂的过程，但通常可以依靠数值计算器找到解决方案。在Apollo中，LQR控制器被表达为：u=-Kx。求解的目标就是找到一个最优的K。</p>
 <p><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gckcjvv452j30j009vq41.jpg" alt="成本函数"></p>
 <p><strong>MPC</strong><br>模型预测是一种复杂的控制器，最初用于工业领域。也是一种基于模型的控制器。MPC是一种多变量的控制算法，采用程序的内在动态模型，过去的控制信号，针对滚动预测域的最佳化成本函数J来计算最优化的控制信号。它由预测模型，反馈校正，滚动优化和参考轨迹四个部分组成。对于其预测能力，预测越深入，控制器就越精确，不过需要的时间也越长。所以需要在准确度与快速获取结果之间做出取舍，获取结果的速度越快，越能快速地将控制输入应用到实际车辆中。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gckcv1s4mhj30j10b7juj.jpg" alt="微信截图_20200306105245.png"><br>MPC优劣对比：MPC考虑了车辆模型，因此比PID控制更精确，也适用于不同的成本函数。另一方面与PID控制相比，模型预测控制相对更复杂、更缓慢、更难以实现。在实践中无人驾驶车的控制可扩展性的重要程度，通常意味着值得为MPC投入实现成本，所以MPC成为了一个非常重要的无人驾驶车控制器。</p>
+<h2 id="完结打卡"><a href="#完结打卡" class="headerlink" title="完结打卡"></a>完结打卡</h2><p>首先感谢Healer小姐姐的邀请，我很荣幸能够对本次Apollo的”智能驾驶在线学”中的无人驾驶入门课程的进行测评。断断续续历时两个周，我终于在今天刷完了Apollo的自动驾驶入门课程。作为一名致力于投身自动驾驶行业的学习者，从总体上来讲，这个自动驾驶的入门课程还是超出我的期待的。五星好评! :)</p>
+<p><strong>内容上：</strong><br>这门课主要讲述了自动驾驶技术的各个环节，包括高精度地图，感知，预测，规划和控制等环节。在每个环节中都有相应的技术细节和常用的方法，并且针对每个环节都有相应的项目展示，并附有相应的扩展阅读材料的链接。这些可以帮助初学者对自动驾驶领域有一个清晰的认识，并根据自身的规划找到相应的深入学习路线。对于我个人而言，我最喜欢的一点是：在每个技术环节上，这门课也介绍了Apollo自动驾驶平台的解决方案。学习者因此不仅可以学到的理论知识，还可以在Apollo的源码中了解理论知识的具体应用。</p>
+<p>*<em>课程结构设置上： *</em><br>作为无人驾驶的入门课程，课程结构的设计也很合理，主要注重于讲解整个技术流，对于其技术细节，只讲述了具体的原理和思想，David, Sebastian和Apollo的工程师们的讲解也十分浅显易懂。令我印象深刻的是，在感知章节，David在介绍CNN的时候，通过神经网络和卷积神经网络在具体实现过程上的一个对比，简单明了的解释了为什么要采用卷积这种操作。这让在此之前对此只知其然，不知其所以然的我恍然大悟。</p>
+<p><strong>活动组织上：</strong><br>这次智能驾驶在线学的活动也让众多有志于此的学习者通过群聊的形式聚集在一起，在学习之余也给大家提供了一个相互交流的平台。这也是我特别喜欢这个活动的部分。</p>
+<p><strong>个人建议：</strong><br>在学习的过程中，我发现目前apollo公众号上的课程学习平台只有课程视频，和udacity平台上的这门课的内容相比，缺少课后的练习和一些扩展的资料的部分，因此使用起来较为不便。希望可以增加这部分内容。其次，课程内容可以增加一些邀请行业中的一线人士做不同主题的云沙龙或演讲，我个人对此很感兴趣，因为可以听取行业一线人士的经验和观点，对于致力于投身此行业的人很有学习和借鉴意义。</p>
+<p>以上就是我作为一名学习者对这门课程的看法和感受，最后希望Apollo推出越来越多的这样的课程，也祝愿Apollo越来越好，成为自动驾驶领域的领航者。</p>
 
         </div>
         <footer class="article-footer">
@@ -367,7 +373,7 @@ ga('send', 'pageview');
 L0： 基本等级，驾驶者是唯一决策者
 L1：Driver Assistance, 车辆为驾驶员提供转向或加速支持，如cruise control
 L2: Partical Automation, 车辆负责部分驾驶功能，如Automatic Cruise control, Automatic Lane Keeping, 但驾驶员始终保持对系统的",
-        "wordCount": 227
+        "wordCount": 234
     }
 </script>
 

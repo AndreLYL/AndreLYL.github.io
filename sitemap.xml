@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/02/11/Hobby/Minecraft-Bibliothek/</loc>
+    
+    <lastmod>2020-03-08T07:29:16.763Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/02/23/Major/01.Tensorflow_Udacity/</loc>
+    
+    <lastmod>2020-03-08T07:13:13.717Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/01/15/Note_for_object_detection/</loc>
+    
+    <lastmod>2020-03-07T20:11:02.911Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/02/25/Major/02.Apollo_Introduction/</loc>
     
     <lastmod>2020-03-06T16:15:02.448Z</lastmod>
@@ -37,37 +58,16 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/02/23/Major/01.Tensorflow_Udacity/</loc>
-    
-    <lastmod>2020-02-25T09:49:40.792Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/02/11/Hobby/Minecraft-Bibliothek/</loc>
-    
-    <lastmod>2020-02-23T09:28:12.390Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/12/28/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7%EF%BC%9A%E5%8D%95%E8%AF%8D%E7%AF%87/</loc>
+    <loc>http://yoursite.com/2019/12/28/German%20Driver's%20_license_words/</loc>
     
     <lastmod>2020-02-09T22:17:57.726Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/01/02/%E5%BE%B7%E5%9B%BD%E4%BA%A4%E8%A7%84-Halten&Parken/</loc>
+    <loc>http://yoursite.com/2020/01/02/German%20traffic%20regulations-Halten&Parken/</loc>
     
     <lastmod>2020-02-09T22:17:46.263Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/01/15/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2020-02-09T22:17:16.687Z</lastmod>
     
   </url>
   
@@ -154,6 +154,27 @@
 <urlset xmlns="https://andrelyl.github.io/schemas/sitemap/1.0">
   
       
+        https://andrelyl.github.io/2020/02/11/Hobby/Minecraft-Bibliothek/
+        
+        2020-03-08T07:29:16.763Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2020/02/23/Major/01.Tensorflow_Udacity/
+        
+        2020-03-08T07:13:13.717Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2020/01/15/Note_for_object_detection/
+        
+        2020-03-07T20:11:02.911Z
+        
+      
+      
+      
         https://andrelyl.github.io/2020/02/25/Major/02.Apollo_Introduction/
         
         2020-03-06T16:15:02.448Z
@@ -189,37 +210,16 @@
       
       
       
-        https://andrelyl.github.io/2020/02/23/Major/01.Tensorflow_Udacity/
-        
-        2020-02-25T09:49:40.792Z
-        
-      
-      
-      
-        https://andrelyl.github.io/2020/02/11/Hobby/Minecraft-Bibliothek/
-        
-        2020-02-23T09:28:12.390Z
-        
-      
-      
-      
-        https://andrelyl.github.io/2019/12/28/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7%EF%BC%9A%E5%8D%95%E8%AF%8D%E7%AF%87/
+        https://andrelyl.github.io/2019/12/28/German%20Driver's%20_license_words/
         
         2020-02-09T22:17:57.726Z
         
       
       
       
-        https://andrelyl.github.io/2020/01/02/%E5%BE%B7%E5%9B%BD%E4%BA%A4%E8%A7%84-Halten&Parken/
+        https://andrelyl.github.io/2020/01/02/German%20traffic%20regulations-Halten&Parken/
         
         2020-02-09T22:17:46.263Z
-        
-      
-      
-      
-        https://andrelyl.github.io/2020/01/15/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/
-        
-        2020-02-09T22:17:16.687Z
         
       
       

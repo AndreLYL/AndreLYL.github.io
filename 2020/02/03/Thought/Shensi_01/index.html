@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>慎思篇-毕设 | Hexo</title>
+    
+    <meta name="google-site-verification" content="_H3HWQECXL0s4W6UUnXesjCG6GwWs8lnt2mDes7_41Y" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Blogs" />
+    
+    <meta name="description" content="本篇始于2020年春，时值毕设之始，所思所惑，以博客记之。 其一虽然在德学习生涯已近两年，发现自己还是不太擅长学习，一来懒惰，自控力差，二来学习始终不得其法。辟如助教给了自己两个他所感兴趣的方向。这两天自己网上搜索了相关资料，各种论文方法如同潮水一般，让人顿生知也无涯之叹。 想想还是自己太过于急躁，当静下心来，从一两篇论文入手，然后在论文的Introduction中找pipeline，benchm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="慎思篇-毕设">
+<meta property="og:url" content="http://yoursite.com/2020/02/03/Thought/Shensi_01/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本篇始于2020年春，时值毕设之始，所思所惑，以博客记之。 其一虽然在德学习生涯已近两年，发现自己还是不太擅长学习，一来懒惰，自控力差，二来学习始终不得其法。辟如助教给了自己两个他所感兴趣的方向。这两天自己网上搜索了相关资料，各种论文方法如同潮水一般，让人顿生知也无涯之叹。 想想还是自己太过于急躁，当静下心来，从一两篇论文入手，然后在论文的Introduction中找pipeline，benchm">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-02T23:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-26T08:31:41.074Z">
+<meta property="article:author" content="Andre">
+<meta property="article:tag" content="Blogs">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/" title="Hexo" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-156355099-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">The boy is no one</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Thought/Shensi_01" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        慎思篇-毕设
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+      <i class="fa fa-calendar"></i>
+      <a href="/2020/02/03/Thought/Shensi_01/" class="article-date">
+         <time datetime="2020-02-02T23:00:00.000Z" itemprop="datePublished">2020-02-03</time>
+      </a>
+    </div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Blogs/" rel="tag">Blogs</a>
+    </div>
+
+                
+
+                
+   <div class="article-counter">
+      <i class="fa fa-file-word-o"></i>
+      <span class="post-count-item-text">本文字数: </span>
+      <span class="post-count">1.2k</span>
+      <i class="fa fa-clock-o"></i>
+      <span class="post-time-item-text">阅读时长: </span>
+      <span class="post-count">4 分钟 </span>
+   </div>
+
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>本篇始于2020年春，时值毕设之始，所思所惑，以博客记之。</p>
+<h2 id="其一"><a href="#其一" class="headerlink" title="其一"></a><center>其一</center></h2><p>虽然在德学习生涯已近两年，发现自己还是不太擅长学习，一来懒惰，自控力差，二来学习始终不得其法。辟如助教给了自己两个他所感兴趣的方向。这两天自己网上搜索了相关资料，各种论文方法如同潮水一般，让人顿生知也无涯之叹。 想想还是自己太过于急躁，当静下心来，从一两篇论文入手，然后在论文的Introduction中找pipeline，benchmark。然后找一找网上的博客，看一下大牛们对相关知识方法的总结，理清技术流派。 再找助教聊一聊，讨论一下毕设的具体内容以及从何做起。定下题目，签完合同后就静下心坐禅炼丹。虽然自己在这个领域的基础知识还很薄弱，但是还是可以从实践中反哺理论知识。不要焦急，用欣赏技术的心态去做这些东西，相信自己还是能够做出成果的。</p>
+<p align="right">2020.02.03</p>
+
+<h2 id="其二-浮躁"><a href="#其二-浮躁" class="headerlink" title="其二: 浮躁"></a><center>其二: 浮躁</center></h2><p>人贵有自知之明。但说易行难。自己平日活的也过于浑浑噩噩，即使自知，也很少再去往深处探究，剖析自身，只有吃到苦头，方涨记性。才会想到去修身养性，三省吾身。好在还为时不晚。就自己而言，最大的缺点就是: 浮躁，不踏实。 但这五个字背后究竟代表着什么？ 今天早上醒来思考人生，也算是对自己的缺点有些新的认识。以这个学期的计划为例，在制定计划的时候，自己总是过于高估自己的专注能力和低估每一项任务后面所包含的工作量，同时也高估了自己的执行能力。这样经常会导致一种情况，理想很丰满，计划看起来很美好，但经常不了了之，半途而废。而且自己的行事过于急躁，只是想着在二月下旬要将毕设合同签了，但同时又在二月份给自己安排了三门考试。而且时间相隔很近，于此同时自己还有一篇论文总结没有写完。在这样的情况下仍然给助教发了一篇邮件约时间，去讨论毕设的具体任务。这样的安排现在仔细想想的确是空中楼阁，经常会完不成或者匆匆忙忙了事，这样必然会导致计划最后的结果让自己不是很满意。这样自己又会陷入另一种情绪，为什么自己这么菜，啥都做不好。而原因就是自己什么都想做好，但自己的计划能力和执行能力又满足不了自己的雄心壮志。所以，一定要让自己慢下来。仔细想想什么是必要的，什么是不必要的。专注于最应该做的事情，把一件事情做好。接下来对自己最重要的事情，其一是学分修满，其二是毕设。因此优先考虑这两件事情，比如接下来18,24两门考试，最重要的是24，争取一次就考个理想的分数，就不必在花费时间再去考虑刷分的事情。其次对自己重要的是毕设，如果毕设做的好，自己的学分绩也就自然而然的会提上去。因此，可以放弃18号的刷分考试，给自己留充足的时间准备24号的考试和毕设。最最最重要的是-让自己慢下来。</p>
+<p align="right">2020.02.14</p>
+
+
+<h2 id="其三"><a href="#其三" class="headerlink" title="其三"></a><center>其三</center></h2><p>有句话叫做：温故而知新，此言甚是。最近做毕设要涉及Apollo的数据集，因此就看了一门Udacity上的网课，该网课首先讲的是自动驾驶的6个等级，这一概念属于自动驾驶领域的常识，并且自己无论是以前上的网课，学校专业课，以及大牛的博客里面都看过很多遍。但这次再看这个概念时，发现自己居然又有了新的收获。比如自己印象中一直以为自动驾驶只有五个等级，但这次从Apollo的课程中，自己才注意到还有L0等级的存在，此外自己还更加搞清楚了每个等级之间的一些细节上的区别。知识点虽小，但仍给自己带来了很深的感触：做学问一定要有一种空杯心态，慎思，笃行，这应该是作为研究生的基本素养。不可一知半解就心满意足。 </p>
+<p align="right">2020.02.26</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <footer class="article-footer">
+            
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="//www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
+
+
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Andre"
+        },
+        "headline": "慎思篇-毕设",
+        "image": "http://yoursite.com",
+        "keywords": "Blogs",
+        "genre": "慎思",
+        "datePublished": "2020-02-03",
+        "dateCreated": "2020-02-03",
+        "dateModified": "2020-02-26",
+        "url": "http://yoursite.com/2020/02/03/Thought/Shensi_01/",
+        "description": "本篇始于2020年春，时值毕设之始，所思所惑，以博客记之。
+其一虽然在德学习生涯已近两年，发现自己还是不太擅长学习，一来懒惰，自控力差，二来学习始终不得其法。辟如助教给了自己两个他所感兴趣的方向。这两天自己网上搜索了相关资料，各种论文方法如同潮水一般，让人顿生知也无涯之叹。 想想还是自己太过于急躁，当静下心来，从一两篇论文入手，然后在论文的Introduction中找pipeline，benchm",
+        "wordCount": 24
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/yinglong.li.925" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="stack-overflow" href="https://github.com/AndreLYL" target="_blank" rel="noopener">
+                        <i class="icon fa fa-stack-overflow"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/02/09/Major/Self_driving/Paper_self_driving/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            Dynamic Occupancy Grid Prediction for Urban Autonomous Driving
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/02/03/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AF-%E6%AF%95%E8%AE%BE%E7%AF%87/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">自动驾驶的修炼之路-毕设篇</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/03/08/Major/03.Resource_for_self_driving/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
+                            <p class="item-title"><a href="/2020/03/08/Major/03.Resource_for_self_driving/" class="title">自动驾驶学习资源整理</a></p>
+                            <p class="item-date"><time datetime="2020-03-07T23:00:00.000Z" itemprop="datePublished">2020-03-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/02/25/Major/02.Apollo_Introduction/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gc8tg35onpj31950h4ai2.jpg)" alt="Apollo学习" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
+                            <p class="item-title"><a href="/2020/02/25/Major/02.Apollo_Introduction/" class="title">Apollo学习</a></p>
+                            <p class="item-date"><time datetime="2020-02-24T23:00:00.000Z" itemprop="datePublished">2020-02-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/02/23/Major/01.Tensorflow_Udacity/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://video.udacity-data.com/topher/2019/March/5c7f0a2e_tensorflow-l1f1/tensorflow-l1f1.png)" alt="Tensorflow入门_Udacity" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
+                            <p class="item-title"><a href="/2020/02/23/Major/01.Tensorflow_Udacity/" class="title">Tensorflow入门_Udacity</a></p>
+                            <p class="item-date"><time datetime="2020-02-22T23:00:00.000Z" itemprop="datePublished">2020-02-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/02/11/Hobby/Minecraft-Bibliothek/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gcmjlpikq2j31hc2td47v.jpg)" alt="Minecraft-布伦图书馆模型" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a></p>
+                            <p class="item-title"><a href="/2020/02/11/Hobby/Minecraft-Bibliothek/" class="title">Minecraft-布伦图书馆模型</a></p>
+                            <p class="item-date"><time datetime="2020-02-10T23:00:00.000Z" itemprop="datePublished">2020-02-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/02/09/Major/Self_driving/Paper_self_driving/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gbqsxtkjzrj30h10glwju.jpg)" alt="Dynamic Occupancy Grid Prediction for Urban Autonomous Driving" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
+                            <p class="item-title"><a href="/2020/02/09/Major/Self_driving/Paper_self_driving/" class="title">Dynamic Occupancy Grid Prediction for Urban Autonomous Driving</a></p>
+                            <p class="item-date"><time datetime="2020-02-08T23:00:00.000Z" itemprop="datePublished">2020-02-09</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apollo/" rel="tag">Apollo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensorflow/" rel="tag">Tensorflow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-detection/" rel="tag">object detection</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-driving/" rel="tag">self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E6%A8%A1/" rel="tag">建模</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Apollo/" style="font-size: 10px;">Apollo</a> <a href="/tags/Blogs/" style="font-size: 20px;">Blogs</a> <a href="/tags/CV/" style="font-size: 13.33px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/Tensorflow/" style="font-size: 10px;">Tensorflow</a> <a href="/tags/object-detection/" style="font-size: 10px;">object detection</a> <a href="/tags/photo/" style="font-size: 16.67px;">photo</a> <a href="/tags/self-driving/" style="font-size: 10px;">self-driving</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 10px;">建模</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 13.33px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io" target="_blank" rel="noopener">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 Andre</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    <p><center>本站总访问量:<span id="busuanzi_value_site_pv"></span>次</center></p>
+</span>
+<span id="busuanzi_container_site_uv">
+  <p><center>本站访客数: <span id="busuanzi_value_site_uv"></span>人次</center></p>
+</span>
+</div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+
+    
+
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

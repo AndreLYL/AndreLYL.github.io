@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/01/15/Note_for_object_detection/</loc>
+    
+    <lastmod>2020-03-14T09:19:40.524Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/08/Major/03.Resource_for_self_driving/</loc>
+    
+    <lastmod>2020-03-09T17:18:01.755Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/12/28/Theme_hueman/</loc>
     
-    <lastmod>2020-03-09T12:15:07.084Z</lastmod>
+    <lastmod>2020-03-09T14:44:53.999Z</lastmod>
     
   </url>
   
@@ -16,23 +30,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/08/Major/03.Resource_for_self_driving/</loc>
-    
-    <lastmod>2020-03-09T09:29:51.688Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2020/02/11/Hobby/Minecraft-Bibliothek/</loc>
     
     <lastmod>2020-03-08T07:29:16.763Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/01/15/Note_for_object_detection/</loc>
-    
-    <lastmod>2020-03-07T20:11:02.911Z</lastmod>
     
   </url>
   
@@ -161,9 +161,23 @@
 <urlset xmlns="https://andrelyl.github.io/schemas/sitemap/1.0">
   
       
+        https://andrelyl.github.io/2020/01/15/Note_for_object_detection/
+        
+        2020-03-14T09:19:40.524Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2020/03/08/Major/03.Resource_for_self_driving/
+        
+        2020-03-09T17:18:01.755Z
+        
+      
+      
+      
         https://andrelyl.github.io/2019/12/28/Theme_hueman/
         
-        2020-03-09T12:15:07.084Z
+        2020-03-09T14:44:53.999Z
         
       
       
@@ -175,23 +189,9 @@
       
       
       
-        https://andrelyl.github.io/2020/03/08/Major/03.Resource_for_self_driving/
-        
-        2020-03-09T09:29:51.688Z
-        
-      
-      
-      
         https://andrelyl.github.io/2020/02/11/Hobby/Minecraft-Bibliothek/
         
         2020-03-08T07:29:16.763Z
-        
-      
-      
-      
-        https://andrelyl.github.io/2020/01/15/Note_for_object_detection/
-        
-        2020-03-07T20:11:02.911Z
         
       
       

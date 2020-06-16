@@ -22,7 +22,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006E0Yd9gy1gaxx9epc1sj31800uok1m.jpg">
 <meta property="article:published_time" content="2020-01-14T23:00:00.000Z">
-<meta property="article:modified_time" content="2020-03-14T09:19:40.524Z">
+<meta property="article:modified_time" content="2020-03-18T18:20:37.897Z">
 <meta property="article:author" content="Andre">
 <meta property="article:tag" content="CV">
 <meta name="twitter:card" content="summary">
@@ -210,10 +210,10 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">3.1k</span>
+      <span class="post-count">4.8k</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">11 分钟 </span>
+      <span class="post-count">17 分钟 </span>
    </div>
 
 
@@ -271,7 +271,21 @@ ga('send', 'pageview');
 <li>采用第二步训练的检测网络初始化RPN并对RPN进行训练，在此阶段两个网络开始共享卷积层，训练过程仅微调RPN特有的层。</li>
 <li>保持共享卷积层不变，再次训练检测网络，训练过程仅微调Fast R-CNN特有的层。</li>
 </ol>
-<h2 id="YOLO"><a href="#YOLO" class="headerlink" title="YOLO"></a>YOLO</h2>
+<h2 id="YOLO-v1"><a href="#YOLO-v1" class="headerlink" title="YOLO v1"></a>YOLO v1</h2><p>2016年，Redmon等人提出的YOLO模型也是目标检测领域的里程碑之一。不同于R-CNN，fast R-CNN，faster R-CNN等两阶段模型，YOLO提出了一种unified architecture用于目标检测。该方法将目标检测的框架视为bounding boxes 和 class probabilities的回归问题，采用单个网络来解决。在检测速度上YOLO展现出了卓越的性能。基础YOLO模型以45帧/秒的速度实时处理图像，作者还采用了一种更加小型的YOLO版本实现了150帧每秒的检测。<br><strong>detection pipeline:</strong> YOLO在整副图像上预测所有类别的边界框，首先，输入图像被调整大小为448*448的图像，然后卷积检测网络接收归一化的图像作为输入并输出通过模型的置信度进行打分的边界框。在具体细节上，输入图像首先被划分为 S x S的网格。如果目标的中心点位于某个网格中，则该网格负责目标的边界框的检测。每个网格负责预测B个预测边界框(x, y, w, h)和相应的置信度分数 ####. 除此之外，每个网格还要预测C个条件类别的概率： #### 最终每个图像的预测输出可以参数化为一个S x S x (B x 5 + C)的tensor (见下图).<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gctx2h9rrij30hi0bvwkm.jpg" alt="Model pipeline"></p>
+<p>*<em>Network training: *</em> YOLO所采用的检测网络由24个卷积层和两个全连接层组成，为了提高检测的精度，网络的卷积层采用ImageNet 1000-class competition dataset进行预训练。模型的最后一层输出目标的bounding box和class probabilities。在模型激活函数上模型的最后一层采用了线性的激活函数，其它层采用了leaky rectified linear activation。在优化问题上，YOLO采用了sum-squared error优化模型的输出，正如下面的激活函数所展示的：</p>
+<p>在这里l_{i}^{obj}代表网络i中存在对象，l_{ij}^{obj}代表网络i的第j个bounding box中存在对象.</p>
+<p>模型详细解释：<a href="https://www.jianshu.com/p/cad68ca85e27" target="_blank" rel="noopener">yolo v1详解</a></p>
+<h2 id="YOLO-v2"><a href="#YOLO-v2" class="headerlink" title="YOLO v2"></a>YOLO v2</h2><p>尽管Redmon等人提出的YOLO在目标检测的速度上取得很大的突破，但该网络仍然存在诸多限制。</p>
+<ol>
+<li>由于边界框预测的空间约束，每个网格单元只预测两个含有有单个类别的bounding box，这在提高了检测速度的同时也降低了对多个成组出现的小物体的检测能力。</li>
+<li>模型的检测精度不够高，略低于Faster R-CNN(见表格)</li>
+<li>检测网络中的多个下采样层导致了图像信息的丢失，所提取的模型特征不够精细。<br>针对以上问题，YOLOv2相对v1版本，采用了多种方法在预测精度，检测速度和识别对象种类三个方面进行了改进。除此之外，作者还提出了一种多尺度的训练方法，使模型可以在速度和准确性之间做出权衡。结果上，YOLO V2以67FPS的速度运行时，在VOC 2007上的mAP值为76.8%，而以40FPS的速度运行时的mAP值为78.6%。由于YOLO v2模型能够检测9000种不同对象，因此该模型被称为YOLO9000。</li>
+</ol>
+<p><strong>Better:</strong> 针对模型的第一个缺点，Redmon et al.采用不同的方法来改进YOLO模型。首先作者在所有的卷积层上采用了batch normalization来解决反向传播过程中的梯度消失和梯度爆炸问题，并且可以对模型进行规范化，从而能够获得更好的收敛速度和收敛效果。其次，YOLO v2在分类器预训练后，再采用的高分辨率样本对分类器进行微调，这样可以避免缓解了分辨率突然切换造成的影响。然后，YOLO模型移除了全连接层并引入了anchor来预测边界框。通过该方法来提高模型的召回率。然后，在锚点框的使用上，YOLO v2在训练集的真实框上使用k-means clustering来得到先验框的尺度。但使用锚定框会遇到位置的预测不稳定的问题，这里Redmon et al. 通过添加约束的方法，将预测的中心限制在特定网格单元中。对于YOLO v1模型所提取的特征过于粗糙的问题，YOLO v2引入了一个新的passthrough层检测细粒度特征。具体来说，passthrough层通过将相邻要素堆叠到不同的通道中过来将高分辨率的特征和低分辨率的特征连接起来。使图像的细节信息尽可能的被保留下来。在模型的训练上，由于YOLO网络上去掉了全连接层，因此网络可以处理任意大小的图像。为了保证图像对不同尺度的图像的检测精度，YOLO v2在训练过程中采用不同尺度的图像进行训练，网络的每10个批次将会随机选择新的图像尺寸。最终使网络能够适应各种大小的目标的检测。</p>
+<p>*<em>Faster: *</em>为了进一步提升速度，YOLO2提出了Darknet-19（有19个卷积层和5个MaxPooling层）网络结构。DarkNet-19比VGG-16小一些，精度不弱于VGG-16，但浮点运算量减少到约1/5，以保证更快的运算速度。</p>
+<p>*<em>Stronger: *</em></p>
+<h2 id="one-stage-model-vs-two-stage-model"><a href="#one-stage-model-vs-two-stage-model" class="headerlink" title="one stage model vs. two stage model"></a>one stage model vs. two stage model</h2><p>如下图所示，当我们对检测的管线进行横向比较时，可以很清楚的看到技术的发展趋势。在传统目标检测阶段，检测的pipeline分为三步：区域选择，特征提取和分类。在此阶段检测算法的特征是基于规则手工设计的。在基于深度学习的目标检测阶段，两阶段模型仍遵循传统的目标检测方法的思路，将深度学习技术整合入目标检测的pipeline中。正如图三所示，在R-CNN，SPPnet和Fast R-CNN中，检测模型引入卷积神经网络来提取图像特征，在Faster R-CNN中，卷积神经网络被同时应用于候选区域生成和检测阶段，通过共享卷积使整个检测模型被统一整合为完整的深度学习模型。而基于回归的单阶段检测模型则采用新的思路，直接采用深度学习技术从pixel直接预测物体，取消了区域生成的阶段，大大简化了模型的复杂程度。</p>
+
         </div>
         <footer class="article-footer">
             
@@ -345,11 +359,11 @@ ga('send', 'pageview');
         "genre": "术业",
         "datePublished": "2020-01-15",
         "dateCreated": "2020-01-15",
-        "dateModified": "2020-03-14",
+        "dateModified": "2020-03-18",
         "url": "http://yoursite.com/2020/01/15/Note_for_object_detection/",
         "description": "DPM模型：魔改版HOG+SVM论文地址：A Discriminatively Trained, Multiscale, Deformable Part Model  
 Dalal的论文结尾的未来展望部分曾提到，虽然采用固定的模板可以很好的解决的行人检测问题，但是采用可变的部件模型会具有更加普遍的应用场景。也就是本文的主要内容-DPM模型，其全称为可变部件模型。 该模型在首先由图像金字塔生成HOG",
-        "wordCount": 306
+        "wordCount": 400
     }
 </script>
 
@@ -428,20 +442,20 @@ Dalal的论文结尾的未来展望部分曾提到，虽然采用固定的模板
         
 <nav id="article-nav">
     
-        <a href="/2020/02/03/Thought/Shensi_01/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2020/01/15/Major/05.keras/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            慎思篇-毕设
+            Keras笔记
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2020/01/02/Markdown/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2020/01/15/Major/04.Note_for_3D_object_detection%20-%20%E5%89%AF%E6%9C%AC/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">Markdown语法</p>
+        <p class="article-nav-title">3D目标检测</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -569,7 +583,7 @@ Dalal的论文结尾的未来展望部分曾提到，虽然采用固定的模板
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">5</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -579,7 +593,7 @@ Dalal的论文结尾的未来展望部分曾提到，虽然采用固定的模板
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -589,7 +603,7 @@ Dalal的论文结尾的未来展望部分曾提到，虽然采用固定的模板
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apollo/" rel="tag">Apollo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensorflow/" rel="tag">Tensorflow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-detection/" rel="tag">object detection</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-driving/" rel="tag">self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E6%A8%A1/" rel="tag">建模</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apollo/" rel="tag">Apollo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensorflow/" rel="tag">Tensorflow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-detection/" rel="tag">object detection</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-driving/" rel="tag">self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorflow/" rel="tag">tensorflow</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E6%A8%A1/" rel="tag">建模</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -599,7 +613,7 @@ Dalal的论文结尾的未来展望部分曾提到，虽然采用固定的模板
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Apollo/" style="font-size: 10px;">Apollo</a> <a href="/tags/Blogs/" style="font-size: 20px;">Blogs</a> <a href="/tags/CV/" style="font-size: 13.33px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/Tensorflow/" style="font-size: 10px;">Tensorflow</a> <a href="/tags/object-detection/" style="font-size: 10px;">object detection</a> <a href="/tags/photo/" style="font-size: 16.67px;">photo</a> <a href="/tags/self-driving/" style="font-size: 10px;">self-driving</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 10px;">建模</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 13.33px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
+            <a href="/tags/Apollo/" style="font-size: 10px;">Apollo</a> <a href="/tags/Blogs/" style="font-size: 20px;">Blogs</a> <a href="/tags/CV/" style="font-size: 20px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/Tensorflow/" style="font-size: 10px;">Tensorflow</a> <a href="/tags/object-detection/" style="font-size: 10px;">object detection</a> <a href="/tags/photo/" style="font-size: 20px;">photo</a> <a href="/tags/self-driving/" style="font-size: 10px;">self-driving</a> <a href="/tags/tensorflow/" style="font-size: 15px;">tensorflow</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 10px;">建模</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 15px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
         </div>
     </div>
 

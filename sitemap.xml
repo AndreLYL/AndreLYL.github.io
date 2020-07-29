@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/01/15/Major/04.Note_for_3D_object_detection%20-%20%E5%89%AF%E6%9C%AC/</loc>
+    
+    <lastmod>2020-07-29T23:17:49.651Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/01/15/Major/06.point_cloud_bev/</loc>
+    
+    <lastmod>2020-07-29T22:50:06.592Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/01/15/Major/05.NVIDIA/</loc>
     
     <lastmod>2020-07-29T21:04:25.505Z</lastmod>
@@ -26,20 +40,6 @@
     <loc>http://yoursite.com/2020/03/08/Major/03.Resource_for_self_driving/</loc>
     
     <lastmod>2020-04-18T11:33:57.463Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/01/15/Major/Colab/Colab_01/</loc>
-    
-    <lastmod>2020-04-10T17:52:04.388Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/01/15/Major/04.Note_for_3D_object_detection%20-%20%E5%89%AF%E6%9C%AC/</loc>
-    
-    <lastmod>2020-04-04T10:17:14.868Z</lastmod>
     
   </url>
   
@@ -175,6 +175,20 @@
 <urlset xmlns="https://andrelyl.github.io/schemas/sitemap/1.0">
   
       
+        https://andrelyl.github.io/2020/01/15/Major/04.Note_for_3D_object_detection%20-%20%E5%89%AF%E6%9C%AC/
+        
+        2020-07-29T23:17:49.651Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2020/01/15/Major/06.point_cloud_bev/
+        
+        2020-07-29T22:50:06.592Z
+        
+      
+      
+      
         https://andrelyl.github.io/2020/01/15/Major/05.NVIDIA/
         
         2020-07-29T21:04:25.505Z
@@ -199,20 +213,6 @@
         https://andrelyl.github.io/2020/03/08/Major/03.Resource_for_self_driving/
         
         2020-04-18T11:33:57.463Z
-        
-      
-      
-      
-        https://andrelyl.github.io/2020/01/15/Major/Colab/Colab_01/
-        
-        2020-04-10T17:52:04.388Z
-        
-      
-      
-      
-        https://andrelyl.github.io/2020/01/15/Major/04.Note_for_3D_object_detection%20-%20%E5%89%AF%E6%9C%AC/
-        
-        2020-04-04T10:17:14.868Z
         
       
       

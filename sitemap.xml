@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/01/15/Major/05.NVIDIA/</loc>
+    
+    <lastmod>2020-07-29T21:04:25.505Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/02/19/first_blog/</loc>
+    
+    <lastmod>2020-07-29T20:14:53.958Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/02/25/Major/02.Apollo_Introduction/</loc>
     
     <lastmod>2020-07-29T19:07:00.697Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>http://yoursite.com/2020/01/15/Major/04.Note_for_3D_object_detection%20-%20%E5%89%AF%E6%9C%AC/</loc>
     
     <lastmod>2020-04-04T10:17:14.868Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/01/15/Major/05.keras/</loc>
-    
-    <lastmod>2020-03-29T12:25:15.148Z</lastmod>
     
   </url>
   
@@ -68,13 +75,6 @@
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2020-03-04T18:25:19.415Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/02/19/first_blog/</loc>
-    
-    <lastmod>2020-03-04T18:22:04.822Z</lastmod>
     
   </url>
   
@@ -175,6 +175,20 @@
 <urlset xmlns="https://andrelyl.github.io/schemas/sitemap/1.0">
   
       
+        https://andrelyl.github.io/2020/01/15/Major/05.NVIDIA/
+        
+        2020-07-29T21:04:25.505Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2019/02/19/first_blog/
+        
+        2020-07-29T20:14:53.958Z
+        
+      
+      
+      
         https://andrelyl.github.io/2020/02/25/Major/02.Apollo_Introduction/
         
         2020-07-29T19:07:00.697Z
@@ -199,13 +213,6 @@
         https://andrelyl.github.io/2020/01/15/Major/04.Note_for_3D_object_detection%20-%20%E5%89%AF%E6%9C%AC/
         
         2020-04-04T10:17:14.868Z
-        
-      
-      
-      
-        https://andrelyl.github.io/2020/01/15/Major/05.keras/
-        
-        2020-03-29T12:25:15.148Z
         
       
       
@@ -241,13 +248,6 @@
         https://andrelyl.github.io/about/index.html
         
         2020-03-04T18:25:19.415Z
-        
-      
-      
-      
-        https://andrelyl.github.io/2019/02/19/first_blog/
-        
-        2020-03-04T18:22:04.822Z
         
       
       

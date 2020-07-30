@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/05/01/Major/08.learn_pytorch/</loc>
+    
+    <lastmod>2020-07-30T10:39:58.131Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/15/Major/06.point_cloud_bev/</loc>
+    
+    <lastmod>2020-07-30T10:17:07.354Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/03/Major/07.KITTI_datasets/</loc>
+    
+    <lastmod>2020-07-30T10:16:35.914Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/03/paper_birdnet/</loc>
     
     <lastmod>2020-07-30T09:40:22.430Z</lastmod>
@@ -26,13 +47,6 @@
     <loc>http://yoursite.com/2020/01/01/Major/05.NVIDIA/</loc>
     
     <lastmod>2020-07-30T08:49:03.928Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/01/15/Major/06.point_cloud_bev/</loc>
-    
-    <lastmod>2020-07-30T08:48:31.159Z</lastmod>
     
   </url>
   
@@ -175,6 +189,27 @@
 <urlset xmlns="https://andrelyl.github.io/schemas/sitemap/1.0">
   
       
+        https://andrelyl.github.io/2020/05/01/Major/08.learn_pytorch/
+        
+        2020-07-30T10:39:58.131Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2020/03/15/Major/06.point_cloud_bev/
+        
+        2020-07-30T10:17:07.354Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2020/03/03/Major/07.KITTI_datasets/
+        
+        2020-07-30T10:16:35.914Z
+        
+      
+      
+      
         https://andrelyl.github.io/2020/04/03/paper_birdnet/
         
         2020-07-30T09:40:22.430Z
@@ -199,13 +234,6 @@
         https://andrelyl.github.io/2020/01/01/Major/05.NVIDIA/
         
         2020-07-30T08:49:03.928Z
-        
-      
-      
-      
-        https://andrelyl.github.io/2020/01/15/Major/06.point_cloud_bev/
-        
-        2020-07-30T08:48:31.159Z
         
       
       

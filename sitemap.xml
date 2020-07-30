@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/08/Major/04.Pixor/</loc>
+    
+    <lastmod>2020-07-30T10:43:46.831Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/05/01/Major/08.learn_pytorch/</loc>
     
     <lastmod>2020-07-30T10:39:58.131Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://yoursite.com/2020/01/01/Major/05.NVIDIA/</loc>
     
     <lastmod>2020-07-30T08:49:03.928Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/02/15/Major/04.Pixor/</loc>
-    
-    <lastmod>2020-07-29T23:20:49.381Z</lastmod>
     
   </url>
   
@@ -189,6 +189,13 @@
 <urlset xmlns="https://andrelyl.github.io/schemas/sitemap/1.0">
   
       
+        https://andrelyl.github.io/2020/04/08/Major/04.Pixor/
+        
+        2020-07-30T10:43:46.831Z
+        
+      
+      
+      
         https://andrelyl.github.io/2020/05/01/Major/08.learn_pytorch/
         
         2020-07-30T10:39:58.131Z
@@ -234,13 +241,6 @@
         https://andrelyl.github.io/2020/01/01/Major/05.NVIDIA/
         
         2020-07-30T08:49:03.928Z
-        
-      
-      
-      
-        https://andrelyl.github.io/2020/02/15/Major/04.Pixor/
-        
-        2020-07-29T23:20:49.381Z
         
       
       

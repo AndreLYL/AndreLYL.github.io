@@ -2,23 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2020/02/15/Major/04.Pixor/</loc>
+    <loc>http://yoursite.com/2020/04/03/paper_birdnet/</loc>
     
-    <lastmod>2020-07-29T23:20:49.381Z</lastmod>
+    <lastmod>2020-07-30T09:40:22.430Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/08/Major/03.Resource_for_self_driving/</loc>
+    
+    <lastmod>2020-07-30T09:27:18.567Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/02/09/Major/Self_driving/Paper_self_driving/</loc>
+    
+    <lastmod>2020-07-30T09:21:22.146Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/01/01/Major/05.NVIDIA/</loc>
+    
+    <lastmod>2020-07-30T08:49:03.928Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2020/01/15/Major/06.point_cloud_bev/</loc>
     
-    <lastmod>2020-07-29T22:50:06.592Z</lastmod>
+    <lastmod>2020-07-30T08:48:31.159Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/01/15/Major/05.NVIDIA/</loc>
+    <loc>http://yoursite.com/2020/02/15/Major/04.Pixor/</loc>
     
-    <lastmod>2020-07-29T21:04:25.505Z</lastmod>
+    <lastmod>2020-07-29T23:20:49.381Z</lastmod>
     
   </url>
   
@@ -33,13 +54,6 @@
     <loc>http://yoursite.com/2020/02/25/Major/02.Apollo_Introduction/</loc>
     
     <lastmod>2020-07-29T19:07:00.697Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/08/Major/03.Resource_for_self_driving/</loc>
-    
-    <lastmod>2020-04-18T11:33:57.463Z</lastmod>
     
   </url>
   
@@ -75,13 +89,6 @@
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2020-03-04T18:25:19.415Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/02/03/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AF-%E6%AF%95%E8%AE%BE%E7%AF%87/</loc>
-    
-    <lastmod>2020-02-27T22:43:56.303Z</lastmod>
     
   </url>
   
@@ -142,13 +149,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/02/09/Major/Self_driving/Paper_self_driving/</loc>
-    
-    <lastmod>2020-02-09T21:32:15.206Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/photos/index.html</loc>
     
     <lastmod>2019-12-29T22:44:38.523Z</lastmod>
@@ -175,23 +175,44 @@
 <urlset xmlns="https://andrelyl.github.io/schemas/sitemap/1.0">
   
       
-        https://andrelyl.github.io/2020/02/15/Major/04.Pixor/
+        https://andrelyl.github.io/2020/04/03/paper_birdnet/
         
-        2020-07-29T23:20:49.381Z
+        2020-07-30T09:40:22.430Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2020/03/08/Major/03.Resource_for_self_driving/
+        
+        2020-07-30T09:27:18.567Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2020/02/09/Major/Self_driving/Paper_self_driving/
+        
+        2020-07-30T09:21:22.146Z
+        
+      
+      
+      
+        https://andrelyl.github.io/2020/01/01/Major/05.NVIDIA/
+        
+        2020-07-30T08:49:03.928Z
         
       
       
       
         https://andrelyl.github.io/2020/01/15/Major/06.point_cloud_bev/
         
-        2020-07-29T22:50:06.592Z
+        2020-07-30T08:48:31.159Z
         
       
       
       
-        https://andrelyl.github.io/2020/01/15/Major/05.NVIDIA/
+        https://andrelyl.github.io/2020/02/15/Major/04.Pixor/
         
-        2020-07-29T21:04:25.505Z
+        2020-07-29T23:20:49.381Z
         
       
       
@@ -206,13 +227,6 @@
         https://andrelyl.github.io/2020/02/25/Major/02.Apollo_Introduction/
         
         2020-07-29T19:07:00.697Z
-        
-      
-      
-      
-        https://andrelyl.github.io/2020/03/08/Major/03.Resource_for_self_driving/
-        
-        2020-04-18T11:33:57.463Z
         
       
       
@@ -248,13 +262,6 @@
         https://andrelyl.github.io/about/index.html
         
         2020-03-04T18:25:19.415Z
-        
-      
-      
-      
-        https://andrelyl.github.io/2020/02/03/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BF%AE%E7%82%BC%E4%B9%8B%E8%B7%AF-%E6%AF%95%E8%AE%BE%E7%AF%87/
-        
-        2020-02-27T22:43:56.303Z
         
       
       
@@ -311,13 +318,6 @@
         https://andrelyl.github.io/2019/02/20/Hobby/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/
         
         2020-02-09T22:14:29.810Z
-        
-      
-      
-      
-        https://andrelyl.github.io/2020/02/09/Major/Self_driving/Paper_self_driving/
-        
-        2020-02-09T21:32:15.206Z
         
       
       

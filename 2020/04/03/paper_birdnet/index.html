@@ -6,27 +6,27 @@
     
 
     
-    <title>nvidia常用命令 | Hexo</title>
+    <title>基于鸟瞰图的点云目标检测：Birdnet+ | Hexo</title>
     
     <meta name="google-site-verification" content="_H3HWQECXL0s4W6UUnXesjCG6GwWs8lnt2mDes7_41Y" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="nvidia" />
+    <meta name="keywords" content="object detection" />
     
-    <meta name="description" content="Nvidia相关命令 nvidia-smi: 调用nvidia系统管理界面 nvidia-smi -L： 列出所有GPU nvidia-smi -i 0： 查询特定卡的信息，0.1.2.为GPU编号 nvidia-smi pmon： 监控线程 nvidia-smi dmon： 监控设备 nvidia-smi -q： 查询所有信息 nvidia-smi -l 3：持续监控gpu状态，每三秒刷新一次状">
+    <meta name="description" content="简介自动驾驶汽车中的车载3D对象检测通常依赖于LiDAR设备捕获的几何信息。尽管通常优选使用图像特征进行检测，但是许多方法仅将空间数据作为输入。利用这些信息进行推理通常涉及使用紧凑的表示形式，例如鸟瞰图（BEV）投影，这会导致信息丢失，从而阻碍了对象3D框的所有参数的联合推理。在本文中，作者提出了一个完整的端到端3D对象检测框架，该框架可以通过使用两阶段对象检测器和临时回归分支仅从BEV图像中推断">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nvidia常用命令">
-<meta property="og:url" content="http://yoursite.com/2020/01/15/Major/05.NVIDIA/index.html">
+<meta property="og:title" content="基于鸟瞰图的点云目标检测：Birdnet+">
+<meta property="og:url" content="http://yoursite.com/2020/04/03/paper_birdnet/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Nvidia相关命令 nvidia-smi: 调用nvidia系统管理界面 nvidia-smi -L： 列出所有GPU nvidia-smi -i 0： 查询特定卡的信息，0.1.2.为GPU编号 nvidia-smi pmon： 监控线程 nvidia-smi dmon： 监控设备 nvidia-smi -q： 查询所有信息 nvidia-smi -l 3：持续监控gpu状态，每三秒刷新一次状">
+<meta property="og:description" content="简介自动驾驶汽车中的车载3D对象检测通常依赖于LiDAR设备捕获的几何信息。尽管通常优选使用图像特征进行检测，但是许多方法仅将空间数据作为输入。利用这些信息进行推理通常涉及使用紧凑的表示形式，例如鸟瞰图（BEV）投影，这会导致信息丢失，从而阻碍了对象3D框的所有参数的联合推理。在本文中，作者提出了一个完整的端到端3D对象检测框架，该框架可以通过使用两阶段对象检测器和临时回归分支仅从BEV图像中推断">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/006E0Yd9gy1gh8j2rcvqmj30rx0mrmyd.jpg">
-<meta property="article:published_time" content="2020-01-14T23:00:00.000Z">
-<meta property="article:modified_time" content="2020-07-29T21:04:25.505Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006E0Yd9gy1gh94w3hwayj30si0j4wmu.jpg">
+<meta property="article:published_time" content="2020-04-02T22:00:00.000Z">
+<meta property="article:modified_time" content="2020-07-30T09:40:22.430Z">
 <meta property="article:author" content="Andre">
-<meta property="article:tag" content="nvidia">
+<meta property="article:tag" content="object detection">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006E0Yd9gy1gh8j2rcvqmj30rx0mrmyd.jpg">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006E0Yd9gy1gh94w3hwayj30si0j4wmu.jpg">
     
 
     
@@ -172,14 +172,14 @@ ga('send', 'pageview');
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-Major/05.NVIDIA" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-paper_birdnet" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        nvidia常用命令
+        基于鸟瞰图的点云目标检测：Birdnet+
         </h1>
     
 
@@ -190,8 +190,8 @@ ga('send', 'pageview');
                 
     <div class="article-date">
       <i class="fa fa-calendar"></i>
-      <a href="/2020/01/15/Major/05.NVIDIA/" class="article-date">
-         <time datetime="2020-01-14T23:00:00.000Z" itemprop="datePublished">2020-01-15</time>
+      <a href="/2020/04/03/paper_birdnet/" class="article-date">
+         <time datetime="2020-04-02T22:00:00.000Z" itemprop="datePublished">2020-04-03</time>
       </a>
     </div>
 
@@ -201,7 +201,7 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/nvidia/" rel="tag">nvidia</a>
+        <a class="tag-link" href="/tags/object-detection/" rel="tag">object detection</a>
     </div>
 
                 
@@ -210,10 +210,10 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">285</span>
+      <span class="post-count">613</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">1 分钟 </span>
+      <span class="post-count">2 分钟 </span>
    </div>
 
 
@@ -221,25 +221,36 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="Nvidia相关命令"><a href="#Nvidia相关命令" class="headerlink" title="Nvidia相关命令"></a>Nvidia相关命令</h3><ul>
-<li>nvidia-smi: 调用nvidia系统管理界面</li>
-<li>nvidia-smi -L： 列出所有GPU</li>
-<li>nvidia-smi -i 0： 查询特定卡的信息，0.1.2.为GPU编号</li>
-<li>nvidia-smi pmon： 监控线程</li>
-<li>nvidia-smi dmon： 监控设备</li>
-<li>nvidia-smi -q： 查询所有信息</li>
-<li>nvidia-smi -l 3：持续监控gpu状态，每三秒刷新一次状态<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gh8j2rcvqmj30rx0mrmyd.jpg" alt="nvidia-smi.png"></li>
-</ul>
-<h3 id="nvidia-smi-信息解读"><a href="#nvidia-smi-信息解读" class="headerlink" title="nvidia-smi 信息解读"></a>nvidia-smi 信息解读</h3><p><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gh8j3cctcdj31f50od4qp.jpg" alt="20200729_204726000_iOS.jpg"></p>
+            <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>自动驾驶汽车中的车载3D对象检测通常依赖于LiDAR设备捕获的几何信息。尽管通常优选使用图像特征进行检测，但是许多方法仅将空间数据作为输入。利用这些信息进行推理通常涉及使用紧凑的表示形式，例如鸟瞰图（BEV）投影，这会导致信息丢失，从而阻碍了对象3D框的所有参数的联合推理。在本文中，作者提出了一个完整的端到端3D对象检测框架，该框架可以通过使用两阶段对象检测器和临时回归分支仅从BEV图像中推断出定向3D框，从而无需进行后处理阶段。该方法在很大程度上优于其前身（BirdNet），并在KITTI 3D对象检测基准测试中获得了评估中所有类别的最新结果。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gh94w3hwayj30si0j4wmu.jpg" alt=""></p>
+<h3 id="核心思想："><a href="#核心思想：" class="headerlink" title="核心思想："></a>核心思想：</h3><p>通过将点云数据投影为BEV表示将3D目标检测任务转化为2D图像检测问题，然后采用两阶段的Faster RCNN模型实现检测任务。<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gh94w07b1oj30ta0clabs.jpg" alt="">    </p>
+<h3 id="技术细节："><a href="#技术细节：" class="headerlink" title="技术细节："></a>技术细节：</h3><ul>
+<li><p><strong>BEV 表示:</strong> </p>
 <ul>
-<li>Fan：风扇转速，从0到100%之间变动，这个速度是计算机期望的风扇转速，实际情况下如果风扇堵转，可能打不到显示的转速。有的设备不会返回转速，因为它不依赖风扇冷却而是通过其他外设保持低温</li>
-<li>Temp：温度，单位摄氏度。</li>
-<li>Perf：性能状态，从P0到P12，P0表示最大性能，P12表示状态最小性能。</li>
-<li>Pwr：能耗，上方的Persistence-M：是持续模式的状态，持续模式虽然耗能大，但是在新的GPU应用启动时，花费的时间更少。</li>
-<li>Bus-Id：GPU总线，domain:bus:device.function</li>
-<li>Disp.A：Display Active，表示GPU的显示是否初始化。</li>
-<li>Memory Usage：显存使用率。</li>
-<li>Compute M：是计算模式。</li>
+<li>将LIDAR点云数据编码成3个通道的2D结构，这三个通道为： 最大高度(&lt; 3m)，平均强度和单元格中的归一化点密度。</li>
+<li>编码不包括每个单元的最低点信息（groud truth）</li>
+<li>ROI 区域：前左右35m范围</li>
+<li>单元网格的大小：每个单元网格的大小为5cm</li>
+</ul>
+</li>
+<li><p><strong>特征提取：</strong></p>
+<ul>
+<li>采用ResNet-50网络，为了解决BEV视图下行人难以检测的问题，作者对ResNet-50做了一些修改：<br>(i)采用conv3 layer, 下采样因子设为8<br>(ii) 利用特征金字塔网络(FPN)一边从每个ResNet块的输出中提取每个对象对应的特征</li>
+</ul>
+</li>
+<li><p><strong>Region Proposal:</strong></p>
+<ul>
+<li>anchor尺寸：16<em>16， 48</em>48， 80*80</li>
+<li>anchor长宽比： 1:1, 1:2, 2:1</li>
+<li>anchor是轴对齐的</li>
+<li>Feature pooling分辨率： 7*7</li>
+</ul>
+</li>
+<li><p><strong>Classfication &amp; Bounding box regression</strong></p>
+<ul>
+<li>RPN的第一阶段的proposals采用BEV图上的2D bounding box来表示，第二阶段负责对这些proposals进行分类。</li>
+<li>预测步骤由两个全连接层完成， 每个层具有1024个元素，这些元素最终被馈送到一组individual heads中, 每个head由FC层组成并负责不同的任务，这些heads有三个分支，分别负责分类，轴对齐的框回归和离散的yaw的分类</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -309,23 +320,16 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "Andre"
         },
-        "headline": "nvidia常用命令",
-        "image": "http://yoursite.comhttp://ww1.sinaimg.cn/large/006E0Yd9gy1gh8j2rcvqmj30rx0mrmyd.jpg",
-        "keywords": "nvidia",
+        "headline": "基于鸟瞰图的点云目标检测：Birdnet+",
+        "image": "http://yoursite.comhttp://ww1.sinaimg.cn/large/006E0Yd9gy1gh94w3hwayj30si0j4wmu.jpg",
+        "keywords": "object detection",
         "genre": "术业",
-        "datePublished": "2020-01-15",
-        "dateCreated": "2020-01-15",
-        "dateModified": "2020-07-29",
-        "url": "http://yoursite.com/2020/01/15/Major/05.NVIDIA/",
-        "description": "Nvidia相关命令
-nvidia-smi: 调用nvidia系统管理界面
-nvidia-smi -L： 列出所有GPU
-nvidia-smi -i 0： 查询特定卡的信息，0.1.2.为GPU编号
-nvidia-smi pmon： 监控线程
-nvidia-smi dmon： 监控设备
-nvidia-smi -q： 查询所有信息
-nvidia-smi -l 3：持续监控gpu状态，每三秒刷新一次状",
-        "wordCount": 32
+        "datePublished": "2020-04-03",
+        "dateCreated": "2020-04-03",
+        "dateModified": "2020-07-30",
+        "url": "http://yoursite.com/2020/04/03/paper_birdnet/",
+        "description": "简介自动驾驶汽车中的车载3D对象检测通常依赖于LiDAR设备捕获的几何信息。尽管通常优选使用图像特征进行检测，但是许多方法仅将空间数据作为输入。利用这些信息进行推理通常涉及使用紧凑的表示形式，例如鸟瞰图（BEV）投影，这会导致信息丢失，从而阻碍了对象3D框的所有参数的联合推理。在本文中，作者提出了一个完整的端到端3D对象检测框架，该框架可以通过使用两阶段对象检测器和临时回归分支仅从BEV图像中推断",
+        "wordCount": 49
     }
 </script>
 
@@ -404,20 +408,10 @@ nvidia-smi -l 3：持续监控gpu状态，每三秒刷新一次状",
         
 <nav id="article-nav">
     
-        <a href="/2020/01/15/Major/06.point_cloud_bev/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            KITTI点云数据的鸟瞰图表示
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2020/01/02/Markdown/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2020/03/08/Major/03.Resource_for_self_driving/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">Markdown语法</p>
+        <p class="article-nav-title">学习资源整理：自动驾驶，深度学习，目标检测</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -439,10 +433,10 @@ nvidia-smi -l 3：持续监控gpu状态，每三秒刷新一次状",
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2020/03/08/Major/03.Resource_for_self_driving/" class="thumbnail">
+                            <a href="/2020/04/03/paper_birdnet/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gh94w3hwayj30si0j4wmu.jpg)" alt="基于鸟瞰图的点云目标检测：Birdnet+" class="thumbnail-image"></span>
     
     
 </a>
@@ -451,7 +445,27 @@ nvidia-smi -l 3：持续监控gpu状态，每三秒刷新一次状",
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
-                            <p class="item-title"><a href="/2020/03/08/Major/03.Resource_for_self_driving/" class="title">自动驾驶学习资源整理</a></p>
+                            <p class="item-title"><a href="/2020/04/03/paper_birdnet/" class="title">基于鸟瞰图的点云目标检测：Birdnet+</a></p>
+                            <p class="item-date"><time datetime="2020-04-02T22:00:00.000Z" itemprop="datePublished">2020-04-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/03/08/Major/03.Resource_for_self_driving/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gh949ih6ixj30y30h9dhj.jpg)" alt="学习资源整理：自动驾驶，深度学习，目标检测" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
+                            <p class="item-title"><a href="/2020/03/08/Major/03.Resource_for_self_driving/" class="title">学习资源整理：自动驾驶，深度学习，目标检测</a></p>
                             <p class="item-date"><time datetime="2020-03-07T23:00:00.000Z" itemprop="datePublished">2020-03-08</time></p>
                         </div>
                     </li>
@@ -516,26 +530,6 @@ nvidia-smi -l 3：持续监控gpu状态，每三秒刷新一次状",
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/02/11/Hobby/Minecraft-Bibliothek/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gcmjlpikq2j31hc2td47v.jpg)" alt="Minecraft-布伦图书馆模型" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a></p>
-                            <p class="item-title"><a href="/2020/02/11/Hobby/Minecraft-Bibliothek/" class="title">Minecraft-布伦图书馆模型</a></p>
-                            <p class="item-date"><time datetime="2020-02-10T23:00:00.000Z" itemprop="datePublished">2020-02-11</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -555,7 +549,7 @@ nvidia-smi -l 3：持续监控gpu状态，每三秒刷新一次状",
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -565,7 +559,7 @@ nvidia-smi -l 3：持续监控gpu状态，每三秒刷新一次状",
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apollo/" rel="tag">Apollo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensorflow/" rel="tag">Tensorflow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/" rel="tag">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-detection/" rel="tag">object detection</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/point-cloud/" rel="tag">point cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-driving/" rel="tag">self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E6%A8%A1/" rel="tag">建模</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apollo/" rel="tag">Apollo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensorflow/" rel="tag">Tensorflow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/" rel="tag">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-detection/" rel="tag">object detection</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/point-cloud/" rel="tag">point cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E6%A8%A1/" rel="tag">建模</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -575,7 +569,7 @@ nvidia-smi -l 3：持续监控gpu状态，每三秒刷新一次状",
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Apollo/" style="font-size: 10px;">Apollo</a> <a href="/tags/Blogs/" style="font-size: 20px;">Blogs</a> <a href="/tags/CV/" style="font-size: 20px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/Tensorflow/" style="font-size: 10px;">Tensorflow</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/object-detection/" style="font-size: 10px;">object detection</a> <a href="/tags/photo/" style="font-size: 20px;">photo</a> <a href="/tags/point-cloud/" style="font-size: 10px;">point cloud</a> <a href="/tags/self-driving/" style="font-size: 10px;">self-driving</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 10px;">建模</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 15px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
+            <a href="/tags/Apollo/" style="font-size: 10px;">Apollo</a> <a href="/tags/Blogs/" style="font-size: 20px;">Blogs</a> <a href="/tags/CV/" style="font-size: 20px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/Tensorflow/" style="font-size: 10px;">Tensorflow</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/object-detection/" style="font-size: 15px;">object detection</a> <a href="/tags/photo/" style="font-size: 20px;">photo</a> <a href="/tags/point-cloud/" style="font-size: 10px;">point cloud</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 10px;">建模</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 15px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
         </div>
     </div>
 
@@ -645,7 +639,7 @@ nvidia-smi -l 3：持续监控gpu状态，每三秒刷新一次状",
     var gitalk = new Gitalk({
         clientID: 'b9ac5f0611abdbe3fa3a',
         clientSecret: 'a336c5fbe85883f1c86fb1ddbcaef160fafbe8bb',
-        id: '2348cd801c983e5f74b010e19de0b902',
+        id: 'b17482346b9a10d6bba780f7519c8c98',
         repo: 'andrelyl.github.io',
         owner: 'AndreLYL',
         admin: "AndreLYL"

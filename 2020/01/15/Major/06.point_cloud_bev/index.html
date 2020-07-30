@@ -6,25 +6,27 @@
     
 
     
-    <title>KITTI点云数据的鸟瞰图表示 | Hexo</title>
+    <title>点云数据生成鸟瞰图表示 | Hexo</title>
     
     <meta name="google-site-verification" content="_H3HWQECXL0s4W6UUnXesjCG6GwWs8lnt2mDes7_41Y" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="keywords" content="point cloud" />
     
-    <meta name="description" content="点云数据点云数据是点的集合，由激光雷达采集获得，点云数据应表示为具有N行，具有4列的numpy数组。每行对应一个点，该点在空间（x，y，z）使用3个值表示。 第四个值是附加值，通常为反射率(强度)。 鸟瞰图表示为了创建鸟瞰图图像，来自点云数据的相关轴为x和y轴。">
+    <meta name="description" content="点云数据点云数据是点的集合，由激光雷达采集获得，点云数据应表示为具有N行，具有4列的numpy数组。每行对应一个点，该点在空间（x，y，z）使用3个值表示。 第四个值是附加值，通常为反射率(强度)。 鸟瞰图表示鸟瞰图是俯视视角下点云的一种图形表示。 在自动驾驶中，该表示方法的合理性基于一个前提: 所有的车辆都在地面行驶，因此可以直接将数据展平在x, y平面中。 点云数据转换为鸟瞰图的步骤为：  设">
 <meta property="og:type" content="article">
-<meta property="og:title" content="KITTI点云数据的鸟瞰图表示">
+<meta property="og:title" content="点云数据生成鸟瞰图表示">
 <meta property="og:url" content="http://yoursite.com/2020/01/15/Major/06.point_cloud_bev/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="点云数据点云数据是点的集合，由激光雷达采集获得，点云数据应表示为具有N行，具有4列的numpy数组。每行对应一个点，该点在空间（x，y，z）使用3个值表示。 第四个值是附加值，通常为反射率(强度)。 鸟瞰图表示为了创建鸟瞰图图像，来自点云数据的相关轴为x和y轴。">
+<meta property="og:description" content="点云数据点云数据是点的集合，由激光雷达采集获得，点云数据应表示为具有N行，具有4列的numpy数组。每行对应一个点，该点在空间（x，y，z）使用3个值表示。 第四个值是附加值，通常为反射率(强度)。 鸟瞰图表示鸟瞰图是俯视视角下点云的一种图形表示。 在自动驾驶中，该表示方法的合理性基于一个前提: 所有的车辆都在地面行驶，因此可以直接将数据展平在x, y平面中。 点云数据转换为鸟瞰图的步骤为：  设">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006E0Yd9gy1gh92uux1orj30qe0680wc.jpg">
 <meta property="article:published_time" content="2020-01-14T23:00:00.000Z">
-<meta property="article:modified_time" content="2020-07-29T22:50:06.592Z">
+<meta property="article:modified_time" content="2020-07-30T08:48:31.159Z">
 <meta property="article:author" content="Andre">
 <meta property="article:tag" content="point cloud">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006E0Yd9gy1gh92uux1orj30qe0680wc.jpg">
     
 
     
@@ -177,7 +179,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        KITTI点云数据的鸟瞰图表示
+        点云数据生成鸟瞰图表示
         </h1>
     
 
@@ -208,10 +210,10 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">107</span>
+      <span class="post-count">750</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">1 分钟 </span>
+      <span class="post-count">3 分钟 </span>
    </div>
 
 
@@ -220,8 +222,107 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             <h2 id="点云数据"><a href="#点云数据" class="headerlink" title="点云数据"></a>点云数据</h2><p>点云数据是点的集合，由激光雷达采集获得，点云数据应表示为具有N行，具有4列的numpy数组。每行对应一个点，该点在空间（x，y，z）使用3个值表示。 第四个值是附加值，通常为反射率(强度)。</p>
-<h2 id="鸟瞰图表示"><a href="#鸟瞰图表示" class="headerlink" title="鸟瞰图表示"></a>鸟瞰图表示</h2><p>为了创建鸟瞰图图像，来自点云数据的相关轴为x和y轴。</p>
+<h2 id="鸟瞰图表示"><a href="#鸟瞰图表示" class="headerlink" title="鸟瞰图表示"></a>鸟瞰图表示</h2><p>鸟瞰图是俯视视角下点云的一种图形表示。 在自动驾驶中，该表示方法的合理性基于一个前提: 所有的车辆都在地面行驶，因此可以直接将数据展平在x, y平面中。 点云数据转换为鸟瞰图的步骤为：</p>
+<ul>
+<li>设置感兴趣的区域(Region of Interest), 区域大小为L * W * H.</li>
+<li>设置分辨率，将Region of Interest栅格化，并将点云的位置映射到鸟瞰图上的像素位置，计算occupancy map</li>
+<li>按照高度将鸟瞰图划分为不同的通道，以保存点云数据中的高度信息。</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gh92uux1orj30qe0680wc.jpg" alt="微信截图_20200730102703.png"></p>
+<h2 id="鸟瞰图生成代码"><a href="#鸟瞰图生成代码" class="headerlink" title="鸟瞰图生成代码"></a>鸟瞰图生成代码</h2><pre><code>import numpy as np
 
+
+# ==============================================================================
+#                                                                   SCALE_TO_255
+# ==============================================================================
+def scale_to_255(a, min, max, dtype=np.uint8):
+    &quot;&quot;&quot; Scales an array of values from specified min, max range to 0-255
+        Optionally specify the data type of the output (default is uint8)
+    &quot;&quot;&quot;
+    return (((a - min) / float(max - min)) * 255).astype(dtype)
+
+
+# ==============================================================================
+#                                                         POINT_CLOUD_2_BIRDSEYE
+# ==============================================================================
+def point_cloud_2_birdseye(points,
+                           res=0.1,
+                           side_range=(-10., 10.),  # left-most to right-most
+                           fwd_range = (-10., 10.), # back-most to forward-most
+                           height_range=(-2., 2.),  # bottom-most to upper-most
+                           ):
+    &quot;&quot;&quot; Creates an 2D birds eye view representation of the point cloud data.
+
+    Args:
+        points:     (numpy array)
+                    N rows of points data
+                    Each point should be specified by at least 3 elements x,y,z
+        res:        (float)
+                    Desired resolution in metres to use. Each output pixel will
+                    represent an square region res x res in size.
+        side_range: (tuple of two floats)
+                    (-left, right) in metres
+                    left and right limits of rectangle to look at.
+        fwd_range:  (tuple of two floats)
+                    (-behind, front) in metres
+                    back and front limits of rectangle to look at.
+        height_range: (tuple of two floats)
+                    (min, max) heights (in metres) relative to the origin.
+                    All height values will be clipped to this min and max value,
+                    such that anything below min will be truncated to min, and
+                    the same for values above max.
+    Returns:
+        2D numpy array representing an image of the birds eye view.
+    &quot;&quot;&quot;
+    # EXTRACT THE POINTS FOR EACH AXIS
+    x_points = points[:, 0]
+    y_points = points[:, 1]
+    z_points = points[:, 2]
+
+    # FILTER - To return only indices of points within desired cube
+    # Three filters for: Front-to-back, side-to-side, and height ranges
+    # Note left side is positive y axis in LIDAR coordinates
+    f_filt = np.logical_and((x_points &gt; fwd_range[0]), (x_points &lt; fwd_range[1]))
+    s_filt = np.logical_and((y_points &gt; -side_range[1]), (y_points &lt; -side_range[0]))
+    filter = np.logical_and(f_filt, s_filt)
+    indices = np.argwhere(filter).flatten()
+
+    # KEEPERS
+    x_points = x_points[indices]
+    y_points = y_points[indices]
+    z_points = z_points[indices]
+
+    # CONVERT TO PIXEL POSITION VALUES - Based on resolution
+    x_img = (-y_points / res).astype(np.int32)  # x axis is -y in LIDAR
+    y_img = (-x_points / res).astype(np.int32)  # y axis is -x in LIDAR
+
+    # SHIFT PIXELS TO HAVE MINIMUM BE (0,0)
+    # floor &amp; ceil used to prevent anything being rounded to below 0 after shift
+    x_img -= int(np.floor(side_range[0] / res))
+    y_img += int(np.ceil(fwd_range[1] / res))
+
+    # CLIP HEIGHT VALUES - to between min and max heights
+    pixel_values = np.clip(a=z_points,
+                           a_min=height_range[0],
+                           a_max=height_range[1])
+
+    # RESCALE THE HEIGHT VALUES - to be between the range 0-255
+    pixel_values = scale_to_255(pixel_values,
+                                min=height_range[0],
+                                max=height_range[1])
+
+    # INITIALIZE EMPTY ARRAY - of the dimensions we want
+    x_max = 1 + int((side_range[1] - side_range[0]) / res)
+    y_max = 1 + int((fwd_range[1] - fwd_range[0]) / res)
+    im = np.zeros([y_max, x_max], dtype=np.uint8)
+
+    # FILL PIXEL VALUES IN IMAGE ARRAY
+    im[y_img, x_img] = pixel_values
+
+    return im
+
+pointcloud = np.fromfile(str(&quot;000000.bin&quot;), dtype=np.float32, count=-1).reshape([-1, 4])
+bev = point_cloud_2_birdseye(pointcloud)</code></pre>
         </div>
         <footer class="article-footer">
             
@@ -289,8 +390,8 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "Andre"
         },
-        "headline": "KITTI点云数据的鸟瞰图表示",
-        "image": "http://yoursite.com",
+        "headline": "点云数据生成鸟瞰图表示",
+        "image": "http://yoursite.comhttp://ww1.sinaimg.cn/large/006E0Yd9gy1gh92uux1orj30qe0680wc.jpg",
         "keywords": "point cloud",
         "genre": "术业",
         "datePublished": "2020-01-15",
@@ -298,9 +399,10 @@ ga('send', 'pageview');
         "dateModified": "2020-07-30",
         "url": "http://yoursite.com/2020/01/15/Major/06.point_cloud_bev/",
         "description": "点云数据点云数据是点的集合，由激光雷达采集获得，点云数据应表示为具有N行，具有4列的numpy数组。每行对应一个点，该点在空间（x，y，z）使用3个值表示。 第四个值是附加值，通常为反射率(强度)。
-鸟瞰图表示为了创建鸟瞰图图像，来自点云数据的相关轴为x和y轴。
-",
-        "wordCount": 10
+鸟瞰图表示鸟瞰图是俯视视角下点云的一种图形表示。 在自动驾驶中，该表示方法的合理性基于一个前提: 所有的车辆都在地面行驶，因此可以直接将数据展平在x, y平面中。 点云数据转换为鸟瞰图的步骤为：
+
+设",
+        "wordCount": 1264
     }
 </script>
 
@@ -390,9 +492,9 @@ ga('send', 'pageview');
     </a>
     
     
-        <a href="/2020/01/15/Major/05.NVIDIA/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2020/01/02/German%20traffic%20regulations-Halten&Parken/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">nvidia常用命令</p>
+        <p class="article-nav-title">德国交规：停车与泊车</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -414,10 +516,10 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2020/03/08/Major/03.Resource_for_self_driving/" class="thumbnail">
+                            <a href="/2020/04/03/paper_birdnet/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gh94w3hwayj30si0j4wmu.jpg)" alt="基于鸟瞰图的点云目标检测：Birdnet+" class="thumbnail-image"></span>
     
     
 </a>
@@ -426,7 +528,27 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
-                            <p class="item-title"><a href="/2020/03/08/Major/03.Resource_for_self_driving/" class="title">自动驾驶学习资源整理</a></p>
+                            <p class="item-title"><a href="/2020/04/03/paper_birdnet/" class="title">基于鸟瞰图的点云目标检测：Birdnet+</a></p>
+                            <p class="item-date"><time datetime="2020-04-02T22:00:00.000Z" itemprop="datePublished">2020-04-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/03/08/Major/03.Resource_for_self_driving/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gh949ih6ixj30y30h9dhj.jpg)" alt="学习资源整理：自动驾驶，深度学习，目标检测" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
+                            <p class="item-title"><a href="/2020/03/08/Major/03.Resource_for_self_driving/" class="title">学习资源整理：自动驾驶，深度学习，目标检测</a></p>
                             <p class="item-date"><time datetime="2020-03-07T23:00:00.000Z" itemprop="datePublished">2020-03-08</time></p>
                         </div>
                     </li>
@@ -491,26 +613,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/02/11/Hobby/Minecraft-Bibliothek/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gcmjlpikq2j31hc2td47v.jpg)" alt="Minecraft-布伦图书馆模型" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a></p>
-                            <p class="item-title"><a href="/2020/02/11/Hobby/Minecraft-Bibliothek/" class="title">Minecraft-布伦图书馆模型</a></p>
-                            <p class="item-date"><time datetime="2020-02-10T23:00:00.000Z" itemprop="datePublished">2020-02-11</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -530,7 +632,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -540,7 +642,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apollo/" rel="tag">Apollo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensorflow/" rel="tag">Tensorflow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/" rel="tag">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-detection/" rel="tag">object detection</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/point-cloud/" rel="tag">point cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-driving/" rel="tag">self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E6%A8%A1/" rel="tag">建模</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apollo/" rel="tag">Apollo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensorflow/" rel="tag">Tensorflow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/" rel="tag">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-detection/" rel="tag">object detection</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/point-cloud/" rel="tag">point cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E6%A8%A1/" rel="tag">建模</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -550,7 +652,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Apollo/" style="font-size: 10px;">Apollo</a> <a href="/tags/Blogs/" style="font-size: 20px;">Blogs</a> <a href="/tags/CV/" style="font-size: 20px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/Tensorflow/" style="font-size: 10px;">Tensorflow</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/object-detection/" style="font-size: 10px;">object detection</a> <a href="/tags/photo/" style="font-size: 20px;">photo</a> <a href="/tags/point-cloud/" style="font-size: 10px;">point cloud</a> <a href="/tags/self-driving/" style="font-size: 10px;">self-driving</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 10px;">建模</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 15px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
+            <a href="/tags/Apollo/" style="font-size: 10px;">Apollo</a> <a href="/tags/Blogs/" style="font-size: 20px;">Blogs</a> <a href="/tags/CV/" style="font-size: 20px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/Tensorflow/" style="font-size: 10px;">Tensorflow</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/object-detection/" style="font-size: 15px;">object detection</a> <a href="/tags/photo/" style="font-size: 20px;">photo</a> <a href="/tags/point-cloud/" style="font-size: 10px;">point cloud</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 10px;">建模</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 15px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
         </div>
     </div>
 

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/02/23/Algorithm/001.is_prime/</loc>
+    
+    <lastmod>2021-01-25T10:10:30.271Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/08/Major/04.Pixor/</loc>
     
     <lastmod>2020-07-30T10:43:46.831Z</lastmod>
@@ -188,6 +195,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://andrelyl.github.io/schemas/sitemap/1.0">
   
+      
+        https://andrelyl.github.io/2020/02/23/Algorithm/001.is_prime/
+        
+        2021-01-25T10:10:30.271Z
+        
+      
+      
       
         https://andrelyl.github.io/2020/04/08/Major/04.Pixor/
         
